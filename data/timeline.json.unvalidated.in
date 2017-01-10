@@ -949,7 +949,8 @@
                     "path": "org.processing.App.desktop",
                     "open_event": [
                         "chat::ada::processing::chat_show_interface",
-                        "chat::ada::processing::show_processing_interface"
+                        "chat::ada::processing::show_processing_interface",
+                        "chat::ada::processing::show_processing_interface_pause"
                     ]
                 }
             }
@@ -969,15 +970,22 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Processing interface",
-                    "path": "processing.png",
-                    "open_event": [
+                    "path": "processing.png"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::show_processing_interface_pause",
+            "type": "wait-for",
+            "data": {
+                "timeout": 10000,
+                "then": [
                         "chat::ada::processing::chat_first_code",
                         "chat::ada::processing::code_print_console",
                         "chat::ada::processing::chat_explain_comments",
                         "chat::ada::processing::chat_check_print",
                         "chat::ada::processing::chat_check_print::response"
-                    ]
-                }
+                ]
             }
         },
         {
@@ -1038,8 +1046,7 @@
                         "chat::ada::processing::code_line",
                         "chat::ada::processing::chat_line_example",
                         "chat::ada::processing::show_line_example",
-                        "chat::ada::processing::chat_check_line",
-                        "chat::ada::processing::chat_check_line::response"
+                        "chat::ada::processing::show_line_example_pause"
                     ],
                     "no": [
                         "chat::ada::processing::chat_retry_print",
@@ -1100,6 +1107,17 @@
                     "desc": "Screenshot of line in Processing",
                     "path": "line.png"
                 }
+            }
+        },
+        {
+            "name": "chat::ada::processing::show_line_example_pause",
+            "type": "wait-for",
+            "data": {
+                "timeout": 10000,
+                "then": [
+                        "chat::ada::processing::chat_check_line",
+                        "chat::ada::processing::chat_check_line::response"
+                ]
             }
         },
         {
@@ -1237,7 +1255,8 @@
                         "chat::ada::processing::chat_circle_code",
                         "chat::ada::processing::code_circle",
                         "chat::ada::processing::chat_circle_example",
-                        "chat::ada::processing::show_circle_example"
+                        "chat::ada::processing::show_circle_example",
+                        "chat::ada::processing::show_circle_example_pause"
                     ]
                 }
             }
@@ -1274,12 +1293,19 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Screenshot of circle in Processing",
-                    "path": "circle.png",
-                    "open_event": [
+                    "path": "circle.png"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::show_circle_example_pause",
+            "type": "wait-for",
+            "data": {
+                "timeout": 10000,
+                "then": [
                         "chat::ada::processing::chat_check_circle",
                         "chat::ada::processing::chat_check_circle::response"
-                    ]
-                }
+                ]
             }
         },
         {
@@ -1397,7 +1423,8 @@
                         "chat::ada::processing::chat_advanced_tutorial",
                         "chat::ada::processing::code_martian",
                         "chat::ada::processing::chat_martian_example",
-                        "chat::ada::processing::show_martian_example"
+                        "chat::ada::processing::show_martian_example",
+                        "chat::ada::processing::show_martian_example_pause"
                     ]
                 }
             }
@@ -1434,11 +1461,19 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Screenshot of martian in Processing",
-                    "path": "martian.png",
-                    "open_event": [
-                       "chat::ada::processing::chat_check_martian_appeared", "chat::ada::processing::chat_check_martian_appeared::response"
-                    ]
+                    "path": "martian.png"
                 }
+            }
+        },
+        {
+            "name": "chat::ada::processing::show_martian_example_pause",
+            "type": "wait-for",
+            "data": {
+                "timeout": 10000,
+                "then": [
+                        "chat::ada::processing::chat_check_martian_appeared",
+                        "chat::ada::processing::chat_check_martian_appeared::response"
+                ]
             }
         },
         {
@@ -1547,7 +1582,8 @@
                         "chat::ada::processing::code_color_martian",
                         "chat::ada::processing::chat_explain_code_reading",
                         "chat::ada::processing::chat_martian_colors_example",
-                        "chat::ada::processing::show_martian_colors_example"
+                        "chat::ada::processing::show_martian_colors_example",
+                        "chat::ada::processing::show_martian_colors_example_pause"
                     ]
                 }
             }
@@ -1592,12 +1628,18 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Screenshot of colored Martian in Processing",
-                    "path": "martian_colors.png",
-                    "open_event": [
-                        "chat::ada::processing::chat_check_martian_colors",
-                        "chat::ada::processing::chat_check_martian_colors::response"
-                    ]
+                    "path": "martian_colors.png"
                 }
+            }
+        },
+        {
+            "name": "chat::ada::processing::show_martian_colors_example_pause",
+            "type": "wait-for",
+            "data": {
+                "timeout": 10000,
+                "then": [
+                        "chat::ada::processing::chat_check_martian_colors",
+                        "chat::ada::processing::chat_check_martian_colors::response"                ]
             }
         },
         {
