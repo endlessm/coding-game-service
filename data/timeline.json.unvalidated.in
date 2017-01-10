@@ -1924,7 +1924,8 @@
                         "chat::ada::codeview::weather::start_app::old",
                         "chat::ada::codeview::weather::start_app::what",
                         "chat::ada::codeview::weather::flip_screen::hint_chat",
-                        "chat::ada::codeview::weather::flip_screen::hint_screenshot"
+                        "chat::ada::codeview::weather::flip_screen::hint_screenshot",
+                        "chat::ada::codeview::weather::flip_screen::hint_screenshot_pause"
                     ]
                 }
             }
@@ -1960,12 +1961,19 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Flip to source code editor button",
-                    "path": "codeview-icon.png",
-                    "open_event": [
+                    "path": "codeview-icon.png"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::codeview::weather::flip_screen::hint_screenshot_pause",
+            "type": "wait-for",
+            "data": {
+                "timeout": 10000,
+                "then": [
                         "chat::ada::codeview::weather::flip_screen::hint_chat_second",
                         "chat::ada::codeview::weather::flip_screen::response"
-                    ]
-                }
+                ]
             }
         },
         {
@@ -1995,7 +2003,8 @@
                     "yes": [
                         "chat::ada::codeview::weather::editor::welcome",
                         "chat::ada::codeview::weather::editor::overview",
-                        "chat::ada::codeview::weather::editor::overview::screenshot"
+                        "chat::ada::codeview::weather::editor::overview::screenshot",
+                        "chat::ada::codeview::weather::editor::overview::screenshot_pause"
                     ]
                 }
             }
@@ -2023,16 +2032,23 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Overview of source code editor",
-                    "path": "builder-overview.png",
-                    "open_event": [
+                    "path": "builder-overview.png"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::codeview::weather::editor::overview::screenshot_pause",
+            "type": "wait-for",
+            "data": {
+                "timeout": 10000,
+                "then": [
                         "chat::ada::codeview::weather::editor::task",
                         "chat::ada::codeview::weather::first_task::description",
                         "chat::ada::codeview::weather::first_task::overview",
                         "chat::ada::codeview::weather::first_task::navigate",
                         "chat::ada::codeview::weather::first_task::select",
                         "chat::ada::codeview::weather::first_task::pause"
-                    ]
-                }
+                ]
             }
         },
         {
@@ -2114,7 +2130,8 @@
                     ],
                     "failure": [
                         "chat::ada::codeview::weather::first_task::challenge::hint",
-                        "chat::ada::codeview::weather::first_task::challenge::screenshot"
+                        "chat::ada::codeview::weather::first_task::challenge::screenshot",
+                        "chat::ada::codeview::weather::first_task::challenge::screenshot_pause"
                     ]
                 }
             }
@@ -2150,12 +2167,19 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Hint for finding the copyright year.",
-                    "path": "codeview-builder.png",
-                    "open_event": [
+                    "path": "codeview-builder.png"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::codeview::weather::first_task::challenge::screenshot_pause",
+            "type": "wait-for",
+            "data": {
+                "timeout": 10000,
+                "then": [
                         "chat::ada::codeview::weather::first_task::challenge::prompt",
                         "chat::ada::codeview::weather::first_task::challenge"
-                    ]
-                }
+                ]
             }
         },
         {
