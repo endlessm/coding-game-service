@@ -976,16 +976,28 @@
         },
         {
             "name": "chat::ada::processing::show_processing_interface_pause",
-            "type": "wait-for",
+            "type": "input-user",
             "data": {
-                "timeout": 10000,
-                "then": [
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
                         "chat::ada::processing::chat_first_code",
                         "chat::ada::processing::code_print_console",
                         "chat::ada::processing::chat_explain_comments",
                         "chat::ada::processing::chat_check_print",
                         "chat::ada::processing::chat_check_print::response"
-                ]
+                    ]
+                }
             }
         },
         {
@@ -1111,13 +1123,25 @@
         },
         {
             "name": "chat::ada::processing::show_line_example_pause",
-            "type": "wait-for",
+            "type": "input-user",
             "data": {
-                "timeout": 10000,
-                "then": [
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
                         "chat::ada::processing::chat_check_line",
                         "chat::ada::processing::chat_check_line::response"
-                ]
+                    ]
+                }
             }
         },
         {
@@ -1299,13 +1323,25 @@
         },
         {
             "name": "chat::ada::processing::show_circle_example_pause",
-            "type": "wait-for",
+            "type": "input-user",
             "data": {
-                "timeout": 10000,
-                "then": [
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
                         "chat::ada::processing::chat_check_circle",
                         "chat::ada::processing::chat_check_circle::response"
-                ]
+                    ]
+                }
             }
         },
         {
@@ -1467,13 +1503,25 @@
         },
         {
             "name": "chat::ada::processing::show_martian_example_pause",
-            "type": "wait-for",
+            "type": "input-user",
             "data": {
-                "timeout": 10000,
-                "then": [
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
                         "chat::ada::processing::chat_check_martian_appeared",
                         "chat::ada::processing::chat_check_martian_appeared::response"
-                ]
+                    ]
+                }
             }
         },
         {
@@ -1634,12 +1682,25 @@
         },
         {
             "name": "chat::ada::processing::show_martian_colors_example_pause",
-            "type": "wait-for",
+            "type": "input-user",
             "data": {
-                "timeout": 10000,
-                "then": [
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
                         "chat::ada::processing::chat_check_martian_colors",
-                        "chat::ada::processing::chat_check_martian_colors::response"                ]
+                        "chat::ada::processing::chat_check_martian_colors::response"
+                    ]
+                }
             }
         },
         {
@@ -1967,13 +2028,25 @@
         },
         {
             "name": "chat::ada::codeview::weather::flip_screen::hint_screenshot_pause",
-            "type": "wait-for",
+            "type": "input-user",
             "data": {
-                "timeout": 10000,
-                "then": [
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
                         "chat::ada::codeview::weather::flip_screen::hint_chat_second",
                         "chat::ada::codeview::weather::flip_screen::response"
-                ]
+                    ]
+                }
             }
         },
         {
@@ -2038,17 +2111,29 @@
         },
         {
             "name": "chat::ada::codeview::weather::editor::overview::screenshot_pause",
-            "type": "wait-for",
+            "type": "input-user",
             "data": {
-                "timeout": 10000,
-                "then": [
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
                         "chat::ada::codeview::weather::editor::task",
                         "chat::ada::codeview::weather::first_task::description",
                         "chat::ada::codeview::weather::first_task::overview",
                         "chat::ada::codeview::weather::first_task::navigate",
                         "chat::ada::codeview::weather::first_task::select",
                         "chat::ada::codeview::weather::first_task::pause"
-                ]
+                    ]
+                }
             }
         },
         {
@@ -2173,13 +2258,25 @@
         },
         {
             "name": "chat::ada::codeview::weather::first_task::challenge::screenshot_pause",
-            "type": "wait-for",
+            "type": "input-user",
             "data": {
-                "timeout": 10000,
-                "then": [
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
                         "chat::ada::codeview::weather::first_task::challenge::prompt",
                         "chat::ada::codeview::weather::first_task::challenge"
-                ]
+                    ]
+                }
             }
         },
         {
