@@ -104,8 +104,7 @@ gdbus_codegen_built_sources = CodingGameService.c CodingGameService.h
 
 # Validation of timeline (produces data.timeline)
 data/timeline.json: $(srcdir)/data/timeline.json.unvalidated.in $(all_js_files)
-	mkdir -p data
-	cp $< $@
+	./merge-lessons
 
 # GResources
 resource_files = \

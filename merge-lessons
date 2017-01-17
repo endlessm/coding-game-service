@@ -1,0 +1,13 @@
+#!/bin/bash
+
+TIMELINE=data/timeline.json.unvalidated.in
+LESSONS=data/lessons/*
+OUTPUT=data/timeline.json
+TMPFILE=data/tmp.json
+cp $TIMELINE $OUTPUT
+for LESSON in $LESSONS
+do
+    cp $OUTPUT $TMPFILE
+    jq -s '.[0] as $o1 | .[1] as $o2 | ($o1 + $o2) | .events = ($o1.events + $o2.events) | .missions = ($o1.missions + $o2.missions)' $TMPFILE $LESSON > $OUTPUT
+done
+rm $TMPFILE
