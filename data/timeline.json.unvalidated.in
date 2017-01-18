@@ -3586,6 +3586,9 @@
                             },
                             "popquiz": {
                                 "text": "Pop Culture Quiz"
+                            },
+                            "chatbox": {
+                                "text": "Chatbox"
                             }
                         }
                     }
@@ -3623,6 +3626,11 @@
                     ],
                     "popquiz": [
                         "popquiz::start-mission::popquiz",
+                        "chat::marlon::where_to_go::response",
+                        "chat::marlon::where_to_go::input"
+                    ],
+                    "chatbox": [
+                        "chatbox::start-mission::chatbox",
                         "chat::marlon::where_to_go::response",
                         "chat::marlon::where_to_go::input"
                     ]
