@@ -76,6 +76,7 @@
                 "chat::ada::terminalintro::just_the_beginning",
                 "chat::ada::terminalintro::start_where_all_famous",
                 "chat::ada::terminalintro::install_programming",
+                "chat::ada::terminalintro::install_programming_code",
                 "chat::ada::terminalintro::install_programming::challenge"
             ],
             "artifacts": [
@@ -539,7 +540,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Woah! So cool!"
+                "message": "Whoa! So cool!"
             }
         },
         {
@@ -566,7 +567,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "You just learned your first code!"
+                "message": "You just wrote your first line of code in Endless OS!"
             }
         },
         {
@@ -597,7 +598,16 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Once you're ready, type this exact code to install Terminal: <span font=\"monospace\">install-terminal</span>"
+                "message": "Once you're ready, type this exact code to install Terminal:"
+            }
+        },
+        {
+            "name": "chat::ada::terminalintro::install_programming_code",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "install-terminal",
+                "styles": ["code"]
             }
         },
         {
