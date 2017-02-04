@@ -104,8 +104,7 @@ coding_game_service_shim_sources = lib/shim.c lib/shim.h
 
 # Validation of timeline (produces data.timeline)
 data/timeline.json: $(srcdir)/data/timeline.json.unvalidated.in $(all_js_files)
-	mkdir -p data
-	cp $< $@
+	./merge-lessons
 
 # GResources
 resource_files = \

@@ -1,0 +1,69 @@
+{
+    "missions": [
+         {
+            "name": "chatbox",
+            "short_desc": "Chatbox lesson",
+            "long_desc": "Learn how to create lessons for the chatbox",
+            "hint": "Define a JSON file with the contents and the structure of the lesson.",
+            "start_events": [
+                "chat::ada::chatbox::intro::start",
+                "chat::ada::chatbox::intro::ready"
+            ],
+            "artifacts": [
+                {
+                    "name": "artifact::chatbox::intro::completed",
+                    "desc": "Completed chatbox lesson",
+                    "icon": "text-editor-symbolic",
+                    "points": 101
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "name": "chatbox::start-mission::chatbox",
+            "type": "start-mission",
+            "data": {
+                "name": "chatbox"
+            }
+        },
+        {
+            "name": "chat::ada::chatbox::intro::start",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "You will learn how to create contents for the chatbox"
+            }
+        },
+        {
+            "name": "chat::ada::chatbox::intro::ready",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "choices": {
+                            "yes": {
+                                "text": "Yes! Let's go!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::chatbox::intro::completed"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::chatbox::intro::completed",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Great. You completed it."
+            }
+        }
+    ]
+}
