@@ -196,8 +196,8 @@
             "long_desc": "Misc quiz on music, cinema and sports.",
             "hint": "Choose wisely, you'll have to start over if you don't answer correctly",
             "start_events": [
-                "chat::konrad::popquiz::misc::intro",
-                "chat::konrad::popquiz::misc::ready"
+                "chat::ada::popquiz::misc::intro",
+                "chat::ada::popquiz::misc::ready"
             ],
             "artifacts": [
                 {
@@ -2669,18 +2669,18 @@
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::intro",
+            "name": "chat::ada::popquiz::misc::intro",
             "type": "chat-actor",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "message": "Alright, it’s time for Quiz! You will be getting questions for misc categories. Choose wisely, because if you give the wrong answer, you'll have to start over. Are you ready?"
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::ready",
+            "name": "chat::ada::popquiz::misc::ready",
             "type": "input-user",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "input": {
                     "type": "choice",
                     "settings": {
@@ -2694,33 +2694,33 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::konrad::popquiz::misc::jarjar",
-                        "chat::konrad::popquiz::misc::jarjar_question"
+                        "chat::ada::popquiz::misc::jarjar",
+                        "chat::ada::popquiz::misc::jarjar_question"
                     ]
                 }
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::wrong",
+            "name": "chat::ada::popquiz::misc::wrong",
             "type": "chat-actor",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "message": "Ops! You have chosen the wrong answer. You'll have to start again. Are you ready?"
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::jarjar",
+            "name": "chat::ada::popquiz::misc::jarjar",
             "type": "chat-actor",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "message": "The character Jar Jar Binks first appears in which of the Star Wars movies?"
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::jarjar_question",
+            "name": "chat::ada::popquiz::misc::jarjar_question",
             "type": "input-user",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "input": {
                     "type": "choice",
                     "settings": {
@@ -2743,38 +2743,38 @@
                 },
                 "responses": {
                     "op1": [
-                        "chat::konrad::popquiz::misc::correct",
-                        "chat::konrad::popquiz::misc::beatles",
-                        "chat::konrad::popquiz::misc::beatles_question"
+                        "chat::ada::popquiz::misc::correct",
+                        "chat::ada::popquiz::misc::beatles",
+                        "chat::ada::popquiz::misc::beatles_question"
                     ],
                     "op2": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ],
                     "op3": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ],
                     "op4": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ]
                 }
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::beatles",
+            "name": "chat::ada::popquiz::misc::beatles",
             "type": "chat-actor",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "message": "What city did music band 'The Beatles' come from?"
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::beatles_question",
+            "name": "chat::ada::popquiz::misc::beatles_question",
             "type": "input-user",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "input": {
                     "type": "choice",
                     "settings": {
@@ -2797,38 +2797,38 @@
                 },
                 "responses": {
                     "op3": [
-                        "chat::konrad::popquiz::misc::correct",
-                        "chat::konrad::popquiz::misc::lebron",
-                        "chat::konrad::popquiz::misc::lebron_question"
+                        "chat::ada::popquiz::misc::correct",
+                        "chat::ada::popquiz::misc::lebron",
+                        "chat::ada::popquiz::misc::lebron_question"
                     ],
                     "op1": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ],
                     "op2": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ],
                     "op4": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ]
                 }
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::lebron",
+            "name": "chat::ada::popquiz::misc::lebron",
             "type": "chat-actor",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "message": "Which one of these people is a sports star?"
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::lebron_question",
+            "name": "chat::ada::popquiz::misc::lebron_question",
             "type": "input-user",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "input": {
                     "type": "choice",
                     "settings": {
@@ -2851,38 +2851,38 @@
                 },
                 "responses": {
                     "op3": [
-                        "chat::konrad::popquiz::misc::correct",
-                        "chat::konrad::popquiz::misc::harry",
-                        "chat::konrad::popquiz::misc::harry_question"
+                        "chat::ada::popquiz::misc::correct",
+                        "chat::ada::popquiz::misc::harry",
+                        "chat::ada::popquiz::misc::harry_question"
                     ],
                     "op1": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ],
                     "op2": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ],
                     "op4": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ]
                 }
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::harry",
+            "name": "chat::ada::popquiz::misc::harry",
             "type": "chat-actor",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "message": "Which is the symbol of the Hufflepuff house on the Harry Potter stories?"
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::harry_question",
+            "name": "chat::ada::popquiz::misc::harry_question",
             "type": "input-user",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "input": {
                     "type": "choice",
                     "settings": {
@@ -2905,36 +2905,36 @@
                 },
                 "responses": {
                     "op2": [
-                        "chat::konrad::popquiz::misc::finished"
+                        "chat::ada::popquiz::misc::finished"
                     ],
                     "op1": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ],
                     "op3": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ],
                     "op4": [
-                        "chat::konrad::popquiz::misc::wrong",
-                        "chat::konrad::popquiz::misc::ready"
+                        "chat::ada::popquiz::misc::wrong",
+                        "chat::ada::popquiz::misc::ready"
                     ]
                 }
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::correct",
+            "name": "chat::ada::popquiz::misc::correct",
             "type": "chat-actor",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "message": "Correct! Next one..."
             }
         },
         {
-            "name": "chat::konrad::popquiz::misc::finished",
+            "name": "chat::ada::popquiz::misc::finished",
             "type": "chat-actor",
             "data": {
-                "actor": "Konrad",
+                "actor": "Ada",
                 "message": "Awesome! You finished the quiz. Congratulations!"
             }
         },
