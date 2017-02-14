@@ -1,3 +1,4 @@
+/* eslint-env jasmine */
 // tests/js/testCodingGameService.js
 //
 // Copyright (c) 2016 Endless Mobile Inc.

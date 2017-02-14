@@ -1,3 +1,4 @@
+/* eslint-env jasmine */
 // mocks/constructors.js
 //
 // Copyright (c) 2016-2017 Endless Mobile Inc.
