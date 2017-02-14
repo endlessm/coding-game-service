@@ -78,14 +78,14 @@ const ExternalEffectsStub = new Lang.Class({
         // Essentially, we just have some known data
         // that we will want to test with here
         switch (variant) {
-            case 'as':
-                return [];
-            case 'b':
-                return true;
-            case 's':
-                return 'example';
-            default:
-                throw new Error('Don\'t know how to handle variant type ' + variant);
+        case 'as':
+            return [];
+        case 'b':
+            return true;
+        case 's':
+            return 'example';
+        default:
+            throw new Error('Don\'t know how to handle variant type ' + variant);
         }
     },
 

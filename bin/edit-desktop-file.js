@@ -32,17 +32,17 @@ if (ARGV.length < 2 || showHelp) {
 }
 
 switch (ARGV[0]) {
-    case 'restore':
-        DesktopFile.restore(ARGV[1]);
-        break;
-    case 'set-command':
-        DesktopFile.setCommand(ARGV[1], ARGV[2], ARGV[3]);
-        break;
-    case 'set-icon':
-        DesktopFile.setIcon(ARGV[1], ARGV[2]);
-        break;
-    default:
-        print('No such command: ' + ARGV[0]);
-        usage.map(line => print(line));
-        System.exit(1);
+case 'restore':
+    DesktopFile.restore(ARGV[1]);
+    break;
+case 'set-command':
+    DesktopFile.setCommand(ARGV[1], ARGV[2], ARGV[3]);
+    break;
+case 'set-icon':
+    DesktopFile.setIcon(ARGV[1], ARGV[2]);
+    break;
+default:
+    print('No such command: ' + ARGV[0]);
+    usage.map(line => print(line));
+    System.exit(1);
 }
