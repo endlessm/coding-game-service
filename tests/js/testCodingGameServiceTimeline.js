@@ -95,13 +95,13 @@ function walkTimelineForEventSequence(timeline) {
         }
 
         return sequencePoints;
-    }
+    };
 
     // Get the starting events first
     eventSequence = [addTriggerEvent(timeline.start.initial_event)];
 
     return [seenEvents, eventSequence];
-};
+}
 
 describe('Default Game Service Controller Timeline', function () {
     let controller, externalService, chatController, externalEffects, logFile;

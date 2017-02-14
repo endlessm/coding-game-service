@@ -110,9 +110,9 @@ const createExternalEffects = function() {
     spyOn(effects, 'removeApplication');
     spyOn(effects, 'removeFile');
     return effects;
-}
+};
 const createLogFileWithStructure = function(structure) {
     let [logFile, logFileStream] = Gio.File.new_tmp("game-service-log-XXXXXX");
     logFileStream.output_stream.write(JSON.stringify(structure), null);
     return logFile;
-}
+};
