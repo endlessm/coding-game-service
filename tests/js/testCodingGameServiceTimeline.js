@@ -19,8 +19,8 @@ function walkTimelineForEventSequence(timeline) {
 
     let addTriggerEvent = function(name) {
         let sequencePoints = [{
-           type: 'expect-event',
-           name: name
+            type: 'expect-event',
+            name: name
         }];
 
         // If we haven't seen this event before, descend down
