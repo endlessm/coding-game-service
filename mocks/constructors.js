@@ -90,7 +90,7 @@ const ExternalEffectsStub = new Lang.Class({
         }
     },
 
-    copySourceToTarget: function(settings, key, value) {
+    copySourceToTarget: function() {
     },
 
     addApplication: function() {
