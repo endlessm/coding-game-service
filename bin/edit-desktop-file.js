@@ -27,7 +27,7 @@ let showHelp = (ARGV.length === 1 && ARGV[0] === 'help')
     || ARGV.indexOf('--help') !== -1;
 
 if (ARGV.length < 2 || showHelp) {
-    usage.map(line => print(line));
+    print(usage.join('\n'));
     System.exit(showHelp ? 0 : 1);
 }
 
@@ -43,6 +43,6 @@ case 'set-icon':
     break;
 default:
     print('No such command: ' + ARGV[0]);
-    usage.map(line => print(line));
+    print(usage.join('\n'));
     System.exit(1);
 }
