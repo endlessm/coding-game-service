@@ -8,8 +8,6 @@
 // since it follows the real timeline structure.
 
 const GLib = imports.gi.GLib;
-const Gio = imports.gi.Gio;
-const Lang = imports.lang;
 
 const Controller = imports.lib.controller;
 const Mocks = imports.mocks.constructors;
