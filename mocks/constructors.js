@@ -10,6 +10,7 @@
 const Gio = imports.gi.Gio;
 const Lang = imports.lang;
 
+// eslint-disable-next-line no-unused-vars
 const Descriptors = {
     warnings: [],
     events: [
@@ -45,10 +46,12 @@ const Descriptors = {
         },
     ]
 };
+// eslint-disable-next-line no-unused-vars
 const createChatController = jasmine.createSpyObj.bind(this, 'ChatControllerMock', [
     'sendChatMessage',
     'reset'
 ]);
+// eslint-disable-next-line no-unused-vars
 const createExternalService = jasmine.createSpyObj.bind(this, 'ExternalServiceMock', [
     'connectHandlers',
     'setGameManagerState',
@@ -99,6 +102,7 @@ const ExternalEffectsStub = new Lang.Class({
     removeFile: function(app) {
     }
 });
+// eslint-disable-next-line no-unused-vars
 const createExternalEffects = function() {
     let effects = new ExternalEffectsStub();
     spyOn(effects, 'performEventIn').and.callThrough();
@@ -109,6 +113,7 @@ const createExternalEffects = function() {
     spyOn(effects, 'removeFile');
     return effects;
 };
+// eslint-disable-next-line no-unused-vars
 const createLogFileWithStructure = function(structure) {
     let [logFile, logFileStream] = Gio.File.new_tmp("game-service-log-XXXXXX");
     logFileStream.output_stream.write(JSON.stringify(structure), null);
