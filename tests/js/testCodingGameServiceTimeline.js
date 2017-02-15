@@ -48,18 +48,20 @@ function walkTimelineForEventSequence(timeline) {
                 });
                 break;
             case 'start-mission':
-                let mission = Controller.findInArray(timeline.missions,
-                                                         m => m.name === event.data.name);
+                (function() {
+                    let mission = Controller.findInArray(timeline.missions,
+                                                             m => m.name === event.data.name);
 
-                if (!mission) {
-                    throw new Error('Mission ' + mission + ' does not exist');
-                }
+                    if (!mission) {
+                        throw new Error('Mission ' + mission + ' does not exist');
+                    }
 
-                sequencePoints.push({
-                    type: 'start-mission',
-                    name: event.data.name,
-                    subsequence: mission.start_events.map(addTriggerEvent)
-                });
+                    sequencePoints.push({
+                        type: 'start-mission',
+                        name: event.data.name,
+                        subsequence: mission.start_events.map(addTriggerEvent)
+                    });
+                })();
                 break;
             case 'listen-event':
                 sequencePoints.push({
