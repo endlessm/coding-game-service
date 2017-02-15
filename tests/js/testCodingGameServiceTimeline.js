@@ -48,7 +48,7 @@ function walkTimelineForEventSequence(timeline) {
                 });
                 break;
             case 'start-mission':
-                (function() {
+                {
                     let mission = Controller.findInArray(timeline.missions,
                                                              m => m.name === event.data.name);
 
@@ -61,7 +61,7 @@ function walkTimelineForEventSequence(timeline) {
                         name: event.data.name,
                         subsequence: mission.start_events.map(addTriggerEvent)
                     });
-                })();
+                }
                 break;
             case 'listen-event':
                 sequencePoints.push({
