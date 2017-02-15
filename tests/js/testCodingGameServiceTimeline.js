@@ -50,7 +50,7 @@ function walkTimelineForEventSequence(timeline) {
             case 'start-mission':
                 {
                     let mission = Controller.findInArray(timeline.missions,
-                                                             m => m.name === event.data.name);
+                                                         m => m.name === event.data.name);
 
                     if (!mission) {
                         throw new Error('Mission ' + mission + ' does not exist');
