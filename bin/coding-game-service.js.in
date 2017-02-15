@@ -14,7 +14,6 @@
 // showmehow-service, which is stateless.
 
 const ChatboxService = imports.gi.ChatboxService;
-const CodingGameServiceDBUS = imports.gi.CodingGameService;
 const GLib = imports.gi.GLib;
 const Gio = imports.gi.Gio;
 
@@ -30,12 +29,9 @@ Gio.Resource.load(GLib.build_filenamev(['%PKGDATADIR%',
 // are already on disk if the user sets GJS_PATH appropriately.
 imports.searchPath.push('resource:///com/endlessm/coding-game-service');
 
-const Config = imports.lib.config;
 const Controller = imports.lib.controller;
 const Communicator = imports.lib.communicator;
-const Log = imports.lib.log;
 const Service = imports.lib.service;
-const ShellAppStore = imports.lib.shellAppStore;
 
 // loadTimelineDescriptors
 //
