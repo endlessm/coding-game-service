@@ -21,13 +21,13 @@ const usage = [
     '   set-icon <id> <icon-name-or-path>',
     '   restore <id>',
     '',
-];
+].join('\n');
 
 let showHelp = (ARGV.length === 1 && ARGV[0] === 'help')
     || ARGV.indexOf('--help') !== -1;
 
 if (ARGV.length < 2 || showHelp) {
-    print(usage.join('\n'));
+    print(usage);
     System.exit(showHelp ? 0 : 1);
 }
 
@@ -43,6 +43,6 @@ case 'set-icon':
     break;
 default:
     print('No such command: ' + ARGV[0]);
-    print(usage.join('\n'));
+    print(usage);
     System.exit(1);
 }
