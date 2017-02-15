@@ -7,11 +7,8 @@
 // CodingGameController so that it can be unit tested more
 // easily.
 
-const GLib = imports.gi.GLib;
 const Gio = imports.gi.Gio;
 const Lang = imports.lang;
-
-const Controller = imports.lib.controller;
 
 const Descriptors = {
     warnings: [],
