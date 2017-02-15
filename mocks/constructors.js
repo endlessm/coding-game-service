@@ -66,13 +66,13 @@ const ExternalEffectsStub = new Lang.Class({
         callback();
     },
 
-    cancelPendingEvent: function(name) {
+    cancelPendingEvent: function() {
     },
 
     cancelAllPendingEvents: function() {
     },
 
-    changeGSettingsValue: function(settings, key, value) {
+    changeGSettingsValue: function() {
     },
 
     fetchGSettingsValue: function(settings, key, variant) {
@@ -93,13 +93,13 @@ const ExternalEffectsStub = new Lang.Class({
     copySourceToTarget: function(settings, key, value) {
     },
 
-    addApplication: function(app) {
+    addApplication: function() {
     },
 
-    removeApplication: function(app) {
+    removeApplication: function() {
     },
 
-    removeFile: function(app) {
+    removeFile: function() {
     }
 });
 // eslint-disable-next-line no-unused-vars
