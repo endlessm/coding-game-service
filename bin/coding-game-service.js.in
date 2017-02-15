@@ -21,8 +21,10 @@ const Lang = imports.lang;
 const System = imports.system;
 
 // Load our resource
-Gio.Resource.load(GLib.build_filenamev(['%PKGDATADIR%',
-                                        'com.endlessm.CodingGameService.gresource']))._register();
+Gio.Resource.load(GLib.build_filenamev([
+    '%PKGDATADIR%',
+    'com.endlessm.CodingGameService.gresource'
+]))._register();
 
 // Put ourself in the search path. Note that we have the least priority.
 // This will allow us to run locally against non-packed files that
@@ -55,9 +57,11 @@ const Service = imports.lib.service;
 function loadTimelineDescriptors(cmdlineFile) {
     let filesToTry = [
         cmdlineFile,
-        Gio.File.new_for_path(GLib.build_filenamev([GLib.get_user_config_dir(),
-                                                    'com.endlessm.CodingGameService',
-                                                    'timeline.json'])),
+        Gio.File.new_for_path(GLib.build_filenamev([
+            GLib.get_user_config_dir(),
+            'com.endlessm.CodingGameService',
+            'timeline.json'
+        ])),
         Gio.File.new_for_uri('resource:///com/endlessm/coding-game-service/data/timeline.json')
     ];
 
