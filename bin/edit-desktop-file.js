@@ -1,4 +1,5 @@
 #!/usr/bin/env gjs
+/* global print */
 /* edit-desktop-file.js
  *
  * Copyright (c) 2016 Endless Mobile Inc.
