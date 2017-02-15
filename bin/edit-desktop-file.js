@@ -1,12 +1,12 @@
 #!/usr/bin/env gjs
 /* global print */
-/* edit-desktop-file.js
- *
- * Copyright (c) 2016 Endless Mobile Inc.
- * All Rights Reserved.
- *
- * Simple script to exercise the desktop file editor.
- */
+// edit-desktop-file.js
+//
+// Copyright (c) 2016 Endless Mobile Inc.
+// All Rights Reserved.
+//
+// Simple script to exercise the desktop file editor.
+//
 
 imports.searchPath.push('.');  // XXX: Kludge.
 
