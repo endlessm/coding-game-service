@@ -153,8 +153,8 @@ describe('Default Game Service Controller Timeline', function () {
             describe(sequencePoint.event + ' received response ' + sequencePoint.response, function() {
                 beforeAll(function() {
                     controller.receiveChatResponse(sequencePoint.event,
-                                                       'A response',
-                                                       sequencePoint.response);
+                                                   'A response',
+                                                   sequencePoint.response);
                 });
                 sequencePoint.subsequence.forEach(function(subsequencePoint) {
                     subsequencePoint.forEach(sequencePointTestCaseGenerator);
@@ -190,7 +190,7 @@ describe('Default Game Service Controller Timeline', function () {
             break;
         default:
             throw new Error('Don\'t know how to handle sequence ' +
-                                'point type ' + sequencePoint.type);
+                            'point type ' + sequencePoint.type);
         }
     };
 
