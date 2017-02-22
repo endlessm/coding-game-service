@@ -478,7 +478,8 @@
                 "input": {
                     "type": "text",
                     "settings": {
-                        "showmehow_id": "intro::enable_wobbly_windows"
+                        "showmehow_id": "intro::enable_wobbly_windows",
+                        "placeholder": "Type the code to enable something cool!"
                     }
                 },
                 "styles": ["code"],
