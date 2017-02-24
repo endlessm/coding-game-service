@@ -47,6 +47,10 @@ AC_SUBST([JASMINE_REPORT_ARGUMENT])
 # -------------
 EOS_COVERAGE_REPORT([js])
 
+# Linting
+# -------
+EOS_ESLINT
+
 # Substitute variables
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

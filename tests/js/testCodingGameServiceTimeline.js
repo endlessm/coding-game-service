@@ -1,3 +1,4 @@
+/* eslint-env jasmine */
 // tests/js/testCodingGameService.js
 //
 // Copyright (c) 2016 Endless Mobile Inc.
@@ -7,8 +8,6 @@
 // since it follows the real timeline structure.
 
 const GLib = imports.gi.GLib;
-const Gio = imports.gi.Gio;
-const Lang = imports.lang;
 
 const Controller = imports.lib.controller;
 const Mocks = imports.mocks.constructors;
@@ -19,8 +18,8 @@ function walkTimelineForEventSequence(timeline) {
 
     let addTriggerEvent = function(name) {
         let sequencePoints = [{
-           type: 'expect-event',
-           name: name
+            type: 'expect-event',
+            name: name
         }];
 
         // If we haven't seen this event before, descend down
@@ -38,17 +37,18 @@ function walkTimelineForEventSequence(timeline) {
             // Depending on the type of event, this event may trigger more events
             // and we should recurse into them, but use seenEvents to avoid cycles.
             switch (event.type) {
-                case 'input-user':
-                    Object.keys(event.data.responses).forEach(function(response) {
-                        sequencePoints.push({
-                            type: 'chat-response',
-                            response: response,
-                            event: name,
-                            subsequence: event.data.responses[response].map(addTriggerEvent)
-                        });
+            case 'input-user':
+                Object.keys(event.data.responses).forEach(function(response) {
+                    sequencePoints.push({
+                        type: 'chat-response',
+                        response: response,
+                        event: name,
+                        subsequence: event.data.responses[response].map(addTriggerEvent)
                     });
-                    break;
-                case 'start-mission':
+                });
+                break;
+            case 'start-mission':
+                {
                     let mission = Controller.findInArray(timeline.missions,
                                                          m => m.name === event.data.name);
 
@@ -61,47 +61,48 @@ function walkTimelineForEventSequence(timeline) {
                         name: event.data.name,
                         subsequence: mission.start_events.map(addTriggerEvent)
                     });
-                    break;
-                case 'listen-event':
+                }
+                break;
+            case 'listen-event':
+                sequencePoints.push({
+                    type: 'external-event',
+                    name: event.data.name,
+                    event: name,
+                    subsequence: event.data.received.map(addTriggerEvent)
+                });
+                break;
+            case 'wait-for':
+                sequencePoints.push({
+                    type: 'wait-for',
+                    timeout: event.data.timeout,
+                    subsequence: event.data.then.map(addTriggerEvent)
+                });
+                break;
+            case 'chat-actor-attachment':
+                if (event.data.attachment.open_event) {
                     sequencePoints.push({
-                        type: 'external-event',
-                        name: event.data.name,
+                        type: 'open-attachment',
                         event: name,
-                        subsequence: event.data.received.map(addTriggerEvent)
+                        response: {
+                            evaluate: {}
+                        },
+                        subsequence: event.data.attachment.open_event.map(addTriggerEvent)
                     });
-                    break;
-                case 'wait-for':
-                    sequencePoints.push({
-                        type: 'wait-for',
-                        timeout: event.data.timeout,
-                        subsequence: event.data.then.map(addTriggerEvent)
-                    });
-                    break;
-                case 'chat-actor-attachment':
-                    if (event.data.attachment.open_event) {
-                        sequencePoints.push({
-                            type: 'open-attachment',
-                            event: name,
-                            response: {
-                                evaluate: {}
-                            },
-                            subsequence: event.data.attachment.open_event.map(addTriggerEvent)
-                        });
-                    }
-                    break;
-                default:
-                    break;
+                }
+                break;
+            default:
+                break;
             }
         }
 
         return sequencePoints;
-    }
+    };
 
     // Get the starting events first
     eventSequence = [addTriggerEvent(timeline.start.initial_event)];
 
     return [seenEvents, eventSequence];
-};
+}
 
 describe('Default Game Service Controller Timeline', function () {
     let controller, externalService, chatController, externalEffects, logFile;
@@ -133,63 +134,63 @@ describe('Default Game Service Controller Timeline', function () {
 
     let sequencePointTestCaseGenerator = function(sequencePoint) {
         switch(sequencePoint.type) {
-            case 'expect-event':
-                it('triggered event ' + sequencePoint.name, function() {
-                    expect(controller.eventHasOccurred(sequencePoint.name)).toBeTruthy();
+        case 'expect-event':
+            it('triggered event ' + sequencePoint.name, function() {
+                expect(controller.eventHasOccurred(sequencePoint.name)).toBeTruthy();
+            });
+            break;
+        case 'start-mission':
+            describe('started mission ' + sequencePoint.name, function() {
+                beforeAll(function() {
+                    externalService.currentMission.and.returnValue(sequencePoint.name);
                 });
-                break;
-            case 'start-mission':
-                describe('started mission ' + sequencePoint.name, function() {
-                    beforeAll(function() {
-                        externalService.currentMission.and.returnValue(sequencePoint.name);
-                    });
-                    sequencePoint.subsequence.forEach(function(subsequencePoint) {
-                        subsequencePoint.forEach(sequencePointTestCaseGenerator);
-                    });
+                sequencePoint.subsequence.forEach(function(subsequencePoint) {
+                    subsequencePoint.forEach(sequencePointTestCaseGenerator);
                 });
-                break;
-            case 'chat-response':
-                describe(sequencePoint.event + ' received response ' + sequencePoint.response, function() {
-                    beforeAll(function() {
-                        controller.receiveChatResponse(sequencePoint.event,
-                                                       'A response',
-                                                       sequencePoint.response);
-                    });
-                    sequencePoint.subsequence.forEach(function(subsequencePoint) {
-                        subsequencePoint.forEach(sequencePointTestCaseGenerator);
-                    });
+            });
+            break;
+        case 'chat-response':
+            describe(sequencePoint.event + ' received response ' + sequencePoint.response, function() {
+                beforeAll(function() {
+                    controller.receiveChatResponse(sequencePoint.event,
+                                                   'A response',
+                                                   sequencePoint.response);
                 });
-                break;
-            case 'open-attachment':
-                describe(sequencePoint.event + ' opened attachment', function() {
-                    beforeAll(function() {
-                        controller.receiveOpenAttachment(sequencePoint.event);
-                    });
-                    sequencePoint.subsequence.forEach(function(subsequencePoint) {
-                        subsequencePoint.forEach(sequencePointTestCaseGenerator);
-                    });
+                sequencePoint.subsequence.forEach(function(subsequencePoint) {
+                    subsequencePoint.forEach(sequencePointTestCaseGenerator);
                 });
-                break;
-            case 'external-event':
-                describe(sequencePoint.event + ' received external event ' + sequencePoint.name, function() {
-                    beforeAll(function() {
-                        controller.receiveExternalEvent(sequencePoint.name);
-                    });
-                    sequencePoint.subsequence.forEach(function(subsequencePoint) {
-                        subsequencePoint.forEach(sequencePointTestCaseGenerator);
-                    });
+            });
+            break;
+        case 'open-attachment':
+            describe(sequencePoint.event + ' opened attachment', function() {
+                beforeAll(function() {
+                    controller.receiveOpenAttachment(sequencePoint.event);
                 });
-                break;
-            case 'wait-for':
-                describe('would wait ' + sequencePoint.timeout + ' to satisfy ' + sequencePoint.name, function() {
-                    sequencePoint.subsequence.forEach(function(subsequencePoint) {
-                        subsequencePoint.forEach(sequencePointTestCaseGenerator);
-                    });
+                sequencePoint.subsequence.forEach(function(subsequencePoint) {
+                    subsequencePoint.forEach(sequencePointTestCaseGenerator);
                 });
-                break;
-            default:
-                throw new Error('Don\'t know how to handle sequence ' +
-                                'point type ' + sequencePoint.type);
+            });
+            break;
+        case 'external-event':
+            describe(sequencePoint.event + ' received external event ' + sequencePoint.name, function() {
+                beforeAll(function() {
+                    controller.receiveExternalEvent(sequencePoint.name);
+                });
+                sequencePoint.subsequence.forEach(function(subsequencePoint) {
+                    subsequencePoint.forEach(sequencePointTestCaseGenerator);
+                });
+            });
+            break;
+        case 'wait-for':
+            describe('would wait ' + sequencePoint.timeout + ' to satisfy ' + sequencePoint.name, function() {
+                sequencePoint.subsequence.forEach(function(subsequencePoint) {
+                    subsequencePoint.forEach(sequencePointTestCaseGenerator);
+                });
+            });
+            break;
+        default:
+            throw new Error('Don\'t know how to handle sequence ' +
+                            'point type ' + sequencePoint.type);
         }
     };
 

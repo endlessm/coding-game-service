@@ -1,3 +1,4 @@
+/* eslint-env jasmine */
 // tests/js/testCodingGameService.js
 //
 // Copyright (c) 2016-2017 Endless Mobile Inc.
@@ -6,8 +7,6 @@
 // (apart from the actual sequencing of events themselves).
 
 const GLib = imports.gi.GLib;
-const Gio = imports.gi.Gio;
-const Lang = imports.lang;
 
 const Controller = imports.lib.controller;
 const Mocks = imports.mocks.constructors;

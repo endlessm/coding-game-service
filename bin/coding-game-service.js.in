@@ -14,7 +14,6 @@
 // showmehow-service, which is stateless.
 
 const ChatboxService = imports.gi.ChatboxService;
-const CodingGameServiceDBUS = imports.gi.CodingGameService;
 const GLib = imports.gi.GLib;
 const Gio = imports.gi.Gio;
 
@@ -22,20 +21,19 @@ const Lang = imports.lang;
 const System = imports.system;
 
 // Load our resource
-Gio.Resource.load(GLib.build_filenamev(['%PKGDATADIR%',
-                                        'com.endlessm.CodingGameService.gresource']))._register();
+Gio.Resource.load(GLib.build_filenamev([
+    '%PKGDATADIR%',
+    'com.endlessm.CodingGameService.gresource'
+]))._register();
 
 // Put ourself in the search path. Note that we have the least priority.
 // This will allow us to run locally against non-packed files that
 // are already on disk if the user sets GJS_PATH appropriately.
 imports.searchPath.push('resource:///com/endlessm/coding-game-service');
 
-const Config = imports.lib.config;
 const Controller = imports.lib.controller;
 const Communicator = imports.lib.communicator;
-const Log = imports.lib.log;
 const Service = imports.lib.service;
-const ShellAppStore = imports.lib.shellAppStore;
 
 // loadTimelineDescriptors
 //
@@ -59,9 +57,11 @@ const ShellAppStore = imports.lib.shellAppStore;
 function loadTimelineDescriptors(cmdlineFile) {
     let filesToTry = [
         cmdlineFile,
-        Gio.File.new_for_path(GLib.build_filenamev([GLib.get_user_config_dir(),
-                                                    'com.endlessm.CodingGameService',
-                                                    'timeline.json'])),
+        Gio.File.new_for_path(GLib.build_filenamev([
+            GLib.get_user_config_dir(),
+            'com.endlessm.CodingGameService',
+            'timeline.json'
+        ])),
         Gio.File.new_for_uri('resource:///com/endlessm/coding-game-service/data/timeline.json')
     ];
 
@@ -78,12 +78,14 @@ function loadTimelineDescriptors(cmdlineFile) {
         try {
             let contents = file.load_contents(null)[1];
             descriptors = JSON.parse(contents);
-        } catch (e if e.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.NOT_FOUND)) {
-            continue;
         } catch (e) {
-            // Add the warnings anyway even if we weren't successful, since
-            // the developer might still be interested in them.
-            warnings.push('Unable to load ' + file.get_parse_name() + ': ' + String(e));
+            if (!e.matches(Gio.IOErrorEnum, Gio.IOErrorEnum.NOT_FOUND)) {
+                // Add the warnings anyway even if we weren't successful, since
+                // the developer might still be interested in them.
+                warnings.push('Unable to load ' + file.get_parse_name() + ': ' + String(e));
+            } else {
+                continue;
+            }
         }
 
         // If we were successful, then break here, otherwise try and load
@@ -129,9 +131,11 @@ const CodingGameServiceApplication = new Lang.Class({
 
     vfunc_dbus_register: function(conn, object_path) {
         this.parent(conn, object_path);
-        let logFile = Gio.File.new_for_path(GLib.build_filenamev([GLib.get_user_config_dir(),
-                                                                  'com.endlessm.CodingGameService',
-                                                                  'game-service.log']));
+        let logFile = Gio.File.new_for_path(GLib.build_filenamev([
+            GLib.get_user_config_dir(),
+            'com.endlessm.CodingGameService',
+            'game-service.log'
+        ]));
 
         this._skeleton = new Service.DBUSService(conn, object_path);
         this._controller = new Controller.CodingGameController(loadTimelineDescriptors(this._commandLineFile),

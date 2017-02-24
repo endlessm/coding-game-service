@@ -214,11 +214,12 @@ com.endlessm.Coding.policy: com.endlessm.Coding.policy.in
 TESTS = \
 	$(javascript_tests) \
 	run_coverage.coverage \
+	run_eslint.eslint
 	$(NULL)
 LOG_COMPILER = gtester
 AM_LOG_FLAGS = -k --verbose
 
-TEST_EXTENSIONS = .js .coverage
+TEST_EXTENSIONS = .js .coverage .eslint
 
 JS_LOG_DRIVER = env AM_TAP_AWK='$(AWK)' $(SHELL) $(top_srcdir)/tap-driver.sh
 JS_LOG_DRIVER_FLAGS = --comments
@@ -247,6 +248,11 @@ EOS_JS_COVERAGE_FILES := $(patsubst $(srcdir)/%,%,$(wildcard $(srcdir)/lib/*.js)
 @EOS_COVERAGE_RULES@
 
 AM_JS_LOG_FLAGS += @EOS_JS_COVERAGE_LOG_FLAGS@
+
+# # # LINTING # # #
+EOS_ESLINT_FILES := $(all_js_files)
+
+@EOS_ESLINT_RULES@
 
 # Things to get rid of later
 CLEANFILES += \
