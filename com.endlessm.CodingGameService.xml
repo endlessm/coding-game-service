@@ -18,6 +18,9 @@
     <method name="ExternalEvent">
       <arg name="id" direction="in" type="s"/>
     </method>
+    <method name="StartMission">
+      <arg name="id" direction="in" type="s"/>
+    </method>
     <method name="ResetGame">
     </method>
     <property name="CurrentlyListeningForEvents" type="as" access="read"/>
