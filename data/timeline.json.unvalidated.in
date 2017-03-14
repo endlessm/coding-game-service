@@ -771,7 +771,7 @@
                 "name": "showmehow-showmehow",
                 "received": [
                     "terminalintro::chat::ada::open_terminal::showmehow-navigation",
-                    "terminalintro::chat::ada::open_terminal::navigation-partner-content",
+                    "listen::terminalintro::showmehow-navigation-secondcmd",
                     "listen::terminalintro::showmehow-navigation",
                     "artifact::terminalintro::showmehow"
                 ]
@@ -790,6 +790,16 @@
             "data": {
                 "actor": "Ada",
                 "message": "Now that you've learned how to use showmehow, why not try the navigation lesson?"
+            }
+        },
+        {
+            "name": "listen::terminalintro::showmehow-navigation-secondcmd",
+            "type": "listen-event",
+            "data": {
+                "name": "showmehow-navigation-secondcmd",
+                "received": [
+                    "terminalintro::chat::ada::open_terminal::navigation-partner-content"
+                ]
             }
         },
         {
