@@ -639,6 +639,7 @@
                         "event::ada::terminalintro::install-terminal::insert-terminal-icon",
                         "terminalintro::setting::showmehow::add-showmehow",
                         "listen::terminalintro::showmehow-showmehow",
+                        "listen::terminalintro::showmehow-lesson-completed",
                         "chat::ada::terminalintro::intro-complete",
                         "chat::ada::terminalintro::intro-complete::marlon",
                         "terminalintro::chat::ada::open_terminal",
@@ -766,13 +767,22 @@
             }
         },
         {
+            "name": "listen::terminalintro::showmehow-lesson-completed",
+            "type": "listen-event",
+            "data": {
+                "name": "showmehow-lesson-completed",
+                "received": [
+                    "terminalintro::chat::ada::open_terminal::navigation-partner-content"
+                ]
+            }
+        },
+        {
             "name": "listen::terminalintro::showmehow-showmehow",
             "type": "listen-event",
             "data": {
                 "name": "showmehow-showmehow",
                 "received": [
                     "terminalintro::chat::ada::open_terminal::showmehow-navigation",
-                    "listen::terminalintro::showmehow-navigation-secondcmd",
                     "listen::terminalintro::showmehow-navigation",
                     "artifact::terminalintro::showmehow"
                 ]
@@ -794,16 +804,6 @@
             }
         },
         {
-            "name": "listen::terminalintro::showmehow-navigation-secondcmd",
-            "type": "listen-event",
-            "data": {
-                "name": "showmehow-navigation-secondcmd",
-                "received": [
-                    "terminalintro::chat::ada::open_terminal::navigation-partner-content"
-                ]
-            }
-        },
-        {
             "name": "listen::terminalintro::showmehow-navigation",
             "type": "listen-event",
             "data": {
@@ -818,7 +818,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "I hope you will enjoy learning about the file system in Terminal. There’s so much more you can do! Check out this great lesson from <a href=\"https://www.codecademy.com/learn/learn-the-command-line\">Codecademy</a>!"
+                "message": "There's so many things you can do inside Terminal, and a world of resources to help you. Check out this great lesson from <a href=\"https://www.codecademy.com/learn/learn-the-command-line\">Codecademy</a>!"
             }
         },
         {
