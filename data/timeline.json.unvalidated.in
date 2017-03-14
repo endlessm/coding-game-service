@@ -631,6 +631,7 @@
                         "showmehow_id": "intro::install_programming_hook"
                     }
                 },
+                "styles": ["code"],
                 "responses": {
                     "success": [
                         "chat::ada::terminalintro::install-terminal::artifact",
