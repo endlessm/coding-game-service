@@ -147,6 +147,7 @@ coding_game_service_app_integration_controller_events_changed(GObject *object,
   g_hash_table_iter_init(&iter, controller->event_handlers);
   gpointer key, value;
 
+
   while(g_hash_table_iter_next(&iter, &key, &value)) {
     AppIntegrationDataPair *pair = (AppIntegrationDataPair *) value;
     gboolean contained_in_strv = g_strv_contains(listening_for, (const gchar *) key);
@@ -155,8 +156,9 @@ coding_game_service_app_integration_controller_events_changed(GObject *object,
         (*pair->deregister_data.callback)(controller, pair->deregister_data.data);
       }
 
-      /* Remove this element from the hash table */
-      g_hash_table_iter_remove(&iter);
+      /* Mark this element as deregistered, but don't remove it from
+       * the hash table, we might become interested in it again later */
+      pair->registered = FALSE;
     } else if (!pair->registered && contained_in_strv) {
       if (pair->register_data.callback) {
         (*pair->register_data.callback)(controller, pair->register_data.data);
