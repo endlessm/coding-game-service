@@ -706,7 +706,7 @@
                 "variant_type": "as",
                 "value": {
                     "type": "append-to-list-unique",
-                    "value": ["showmehow", "joke", "playsong", "readfile", "breakit", "navigation"]
+                    "value": ["showmehow", "joke", "readfile", "breakit", "navigation"]
                 }
             }
         },
