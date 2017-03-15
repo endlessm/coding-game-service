@@ -1213,7 +1213,6 @@
                         "chat::ada::processing::chat_confirm_line",
                         "chat::ada::processing::chat_explain_parameters",
                         "chat::ada::processing::show_line_parameters",
-                        "chat::ada::processing::chat_tweak_line_parameters",
                         "chat::ada::processing::chat_move_to_circle",
                         "chat::ada::processing::chat_move_to_circle::response"
                     ],
@@ -1279,14 +1278,6 @@
                     "desc": "Visual explanation of line parameters in Sketch",
                     "path": "line_key.png"
                 }
-            }
-        },
-        {
-            "name": "chat::ada::processing::chat_tweak_line_parameters",
-            "type": "chat-actor",
-            "data": {
-                "actor": "Ada",
-                "message": "Feel free to tweak the line's parameters, press play, and see what happens! (Be sure to keep the values under 200 or else the line will go off screen)."
             }
         },
         {
