@@ -694,7 +694,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "By the way, if you ever get stuck or want to jump to a different coding activity, just talk to my bot buddy Marlon."
+                "message": "By the way, if you get stuck or want to try different coding activities, click on my bot buddy, Marlon, in the upper left corner."
             }
         },
         {
@@ -753,7 +753,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Its on your desktop!"
+                "message": "It’s on your desktop! Just click to the right of ChatBox then click on the “Terminal” app."
             }
         },
         {
