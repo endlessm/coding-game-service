@@ -1920,7 +1920,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Play around with your Martian, adjust its stroke weight, stroke color, or anything else you feel like changing."
+                "message": "Experiment with the parameters that defined your Martian. You can change the ellipses, stroke weight or color, or anything else, now that you know what these commands do!"
             }
         },
         {
