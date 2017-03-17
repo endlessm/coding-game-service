@@ -2043,7 +2043,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "On the desktop, you should see an icon for the “Weather” app. Click that icon and come back here"
+                "message": "On the desktop, you should see an icon for the “Weather” app. Click that icon and come back here."
             }
         },
         {
@@ -2056,7 +2056,8 @@
                     "chat::ada::codeview::weather::start_app::what",
                     "chat::ada::codeview::weather::flip_screen::hint_chat",
                     "chat::ada::codeview::weather::flip_screen::hint_screenshot",
-                    "chat::ada::codeview::weather::flip_screen::hint_screenshot_pause"
+                    "chat::ada::codeview::weather::flip_screen::hint_chat_second",
+                    "listen::codeview::weather::flip_screen::flipped"
                 ]
             }
         },
@@ -2096,39 +2097,15 @@
             }
         },
         {
-            "name": "chat::ada::codeview::weather::flip_screen::hint_screenshot_pause",
-            "type": "input-user",
-            "data": {
-                "actor": "Ada",
-                "input": {
-                    "type": "choice",
-                    "settings": {
-                        "prompt": "Ready to continue?",
-                        "choices": {
-                            "yes": {
-                                "text": "Ready!"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "yes": [
-                        "chat::ada::codeview::weather::flip_screen::hint_chat_second",
-                        "listen::codeview::weather::flip_screen::response"
-                    ]
-                }
-            }
-        },
-        {
             "name": "chat::ada::codeview::weather::flip_screen::hint_chat_second",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Click it to flip the window and view the code behind the Weather app! Let me know once you’ve done it."
+                "message": "Click it to flip the window and view the code behind the Weather app!"
             }
         },
         {
-            "name": "listen::codeview::weather::flip_screen::response",
+            "name": "listen::codeview::weather::flip_screen::flipped",
             "type": "listen-event",
             "data": {
                 "name": "codeview-flipped",
