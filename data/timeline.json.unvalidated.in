@@ -3320,8 +3320,7 @@
                 "responses": {
                     "success": [
                         "chat::ada::python_functions::challenge::success",
-                        "artifact::python_functions::found_answer",
-                        "python_functions::start-mission::python_lists"
+                        "artifact::python_functions::found_answer"
                     ],
                     "failure": [
                         "chat::ada::python_functions::challenge::again",
@@ -3485,8 +3484,7 @@
                 "responses": {
                     "success": [
                         "chat::ada::python_classes::challenge::success",
-                        "artifact::python_classes::found_answer",
-                        "python_classes::start-mission::showmehow_python_gi"
+                        "artifact::python_classes::found_answer"
                     ],
                     "failure": [
                         "chat::ada::python_classes::challenge::again",
