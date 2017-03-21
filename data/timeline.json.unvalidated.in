@@ -2136,7 +2136,7 @@
             "name": "listen::codeview::weather::editor::wait_install",
             "type": "listen-event",
             "data": {
-                "name": "codeview-installed",
+                "name": "codeview-started",
                 "received": [
                     "chat::ada::codeview::weather::editor::overview",
                     "chat::ada::codeview::weather::editor::overview::screenshot",
