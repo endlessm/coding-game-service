@@ -2111,8 +2111,8 @@
                 "name": "codeview-flipped",
                 "received": [
                     "chat::ada::codeview::weather::editor::welcome",
-                    "chat::ada::codeview::weather::editor::wait_install",
-                    "listen::codeview::weather::editor::wait_install"
+                    "chat::ada::codeview::weather::editor::wait_download",
+                    "listen::codeview::weather::editor::wait_download"
                 ]
             }
         },
@@ -2125,7 +2125,7 @@
             }
         },
         {
-            "name": "chat::ada::codeview::weather::editor::wait_install",
+            "name": "chat::ada::codeview::weather::editor::wait_download",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -2133,7 +2133,7 @@
             }
         },
         {
-            "name": "listen::codeview::weather::editor::wait_install",
+            "name": "listen::codeview::weather::editor::wait_download",
             "type": "listen-event",
             "data": {
                 "name": "codeview-started",
@@ -2373,7 +2373,7 @@
                 "input": {
                     "type": "choice",
                     "settings": {
-                        "prompt": "Found the line containing the year?",
+                        "prompt": "Found the code retrieving the weather conditions?",
                         "choices": {
                             "yes": {
                                 "text": "Found it!"
@@ -2388,7 +2388,7 @@
                         "chat::ada::codeview::weather::first_task::challenge::save",
                         "chat::ada::codeview::weather::first_task::challenge::run",
                         "chat::ada::codeview::weather::first_task::challenge::patience",
-                        "chat::ada::codeview::weather::first_task::challenge::pause"
+                        "listen::codeview::weather::first_task::challenge::wait_install"
                     ]
                 }
             }
@@ -2435,28 +2435,14 @@
             }
         },
         {
-            "name": "chat::ada::codeview::weather::first_task::challenge::pause",
-            "type": "input-user",
+            "name": "listen::codeview::weather::first_task::challenge::wait_install",
+            "type": "listen-event",
             "data": {
-                "actor": "Ada",
-                "input": {
-                    "prompt": "Ready to continue?",
-                    "type": "choice",
-                    "settings": {
-                        "prompt": "Ready to continue?",
-                        "choices": {
-                            "yes": {
-                                "text": "Ready!"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "yes": [
-                        "chat::ada::codeview::weather::first_task::challenge::outro",
-                        "chat::ada::codeview::weather::first_task::challenge::ready"
-                    ]
-                }
+                "name": "codeview-installed",
+                "received": [
+                    "chat::ada::codeview::weather::first_task::challenge::outro",
+                    "chat::ada::codeview::weather::first_task::challenge::ready"
+                ]
             }
         },
         {
