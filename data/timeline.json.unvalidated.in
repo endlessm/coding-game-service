@@ -3167,7 +3167,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Now that you’ve learned a bit about your system, let’s learn about Python, a programming language that lets you write your own programs. To get started, open the Terminal app on your desktop and type 'showmehow python'"
+                "message": "Now that you've learned a bit about your system, let's learn about Python, a programming language that lets you write your own programs. To get started, open the Terminal app on your desktop and type 'showmehow python'"
             }
         },
         {
