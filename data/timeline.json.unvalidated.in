@@ -3136,7 +3136,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Congratulations! You uncovered the hidden Todo task!"
+                "message": "Congratulations! You uncovered the hidden Todo task! Click on Marlon to explore more."
             }
         },
         {
