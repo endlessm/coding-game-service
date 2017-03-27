@@ -2708,7 +2708,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Ops! You have chosen the wrong answer. You'll have to start again. Are you ready?"
+                "message": "Oops! You have chosen the wrong answer. You'll have to start again. Are you ready?"
             }
         },
         {
