@@ -755,7 +755,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "It’s on your desktop! Just click to the right of ChatBox then click on the “Terminal” app."
+                "message": "It's on your desktop! Just click on the bottom right corner of your screen, click on the background, then click on the “Terminal” app."
             }
         },
         {
