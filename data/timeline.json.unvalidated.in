@@ -647,6 +647,7 @@
                     ],
                     "failure": [
                         "chat::ada::terminalintro::install_programming::again",
+                        "chat::ada::terminalintro::install_programming::again::addendum",
                         "chat::ada::terminalintro::install_programming::challenge"
                     ]
                 }
@@ -654,6 +655,14 @@
         },
         {
             "name": "chat::ada::terminalintro::install_programming::again",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "'install-terminal' EXACTLY. I haven't got all day!"
+            }
+        },
+        {
+            "name": "chat::ada::terminalintro::install_programming::again::addendum",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
