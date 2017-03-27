@@ -3082,7 +3082,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "There should be a list of default Todo tasks, but one looks cryptic. I am sure you already found it."
+                "message": "There should be a list of default Todo tasks. Click the task below that matches the cryptic Todo task in your To-Dos."
             }
         },
         {
