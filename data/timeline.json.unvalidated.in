@@ -639,7 +639,7 @@
                         "event::ada::terminalintro::install-terminal::insert-terminal-icon",
                         "terminalintro::setting::showmehow::add-showmehow",
                         "listen::terminalintro::showmehow-showmehow",
-                        "listen::terminalintro::showmehow-lesson-completed",
+                        "listen::terminalintro::showmehow-task-completed",
                         "chat::ada::terminalintro::intro-complete",
                         "chat::ada::terminalintro::intro-complete::marlon",
                         "terminalintro::chat::ada::open_terminal",
@@ -767,10 +767,10 @@
             }
         },
         {
-            "name": "listen::terminalintro::showmehow-lesson-completed",
+            "name": "listen::terminalintro::showmehow-task-completed",
             "type": "listen-event",
             "data": {
-                "name": "showmehow-lesson-completed",
+                "name": "showmehow-task-completed",
                 "received": [
                     "terminalintro::chat::ada::open_terminal::navigation-partner-content"
                 ]
