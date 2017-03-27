@@ -193,7 +193,7 @@
         {
             "name": "popquiz",
             "short_desc": "Popular culture quiz",
-            "long_desc": "Misc quiz on music, cinema and sports.",
+            "long_desc": "Miscellaneous quiz on music, cinema and sports.",
             "hint": "Choose wisely, you'll have to start over if you don't answer correctly",
             "start_events": [
                 "chat::ada::popquiz::misc::intro",
