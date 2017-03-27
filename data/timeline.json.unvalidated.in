@@ -3693,7 +3693,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Marlon",
-                "message": "Excellent choice! Come back here if you ever want to switch to a different activity"
+                "message": "Excellent choice! Come back here if you ever want to switch to a different activity. Switch to my bot buddy Ada for step-to-step guidance."
             }
         }
     ]
