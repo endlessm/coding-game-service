@@ -1,10 +1,10 @@
-int num = 20;
+int num = 30;
 float step, sz, offSet, theta, angle;
 
 void setup() {
-  size(600, 400);
+  size(800, 600);
   strokeWeight(5);
-  step = 22;
+  step = 30;
 }
 
 void draw() {
