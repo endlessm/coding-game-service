@@ -1056,7 +1056,7 @@
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
-            "message": "Now let’s change the code and see what happens. In the Text Editor, let’s change the variable for the “num” command on Line 1 from 20 to 10, then press Play."
+            "message": "Now let’s change the code and see what happens. In the Text Editor, let’s change the value of the variable “num” in Line 1 from 20 to 10, then press Play."
           }
         },
         {
