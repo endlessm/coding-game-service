@@ -2584,8 +2584,8 @@
                         "chat::ada::processing::code_stroke",
                         "chat::ada::processing::chat_stroke_color",
                         "chat::ada::processing::chat_tweak_martian",
-                        "chat::ada::processing::chat_move_to_cool_example",
-                        "chat::ada::processing::chat_move_to_cool_example::response"
+                        "chat::ada::processing::see_new_mission",
+                        "chat::ada::processing::see_new_mission::response"
                     ]
                 }
             }
@@ -2621,59 +2621,6 @@
             "data": {
                 "actor": "Ada",
                 "message": "Experiment with the parameters that defined your Martian. You can change the ellipses, stroke weight or color, or anything else, now that you know what these commands do!"
-            }
-        },
-        {
-            "name": "chat::ada::processing::chat_move_to_cool_example",
-            "type": "chat-actor",
-            "data": {
-                "actor": "Ada",
-                "message": "When you're ready to see something really cool, click the button below to continue."
-            }
-        },
-        {
-            "name": "chat::ada::processing::chat_move_to_cool_example::response",
-            "type": "input-user",
-            "data": {
-                "actor": "Ada",
-                "input": {
-                    "type": "choice",
-                    "settings": {
-                        "prompt": "Ready to continue?",
-                        "choices": {
-                            "yes": {
-                                "text": "Ready!"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "yes": [
-                        "chat::ada::processing::wave_explanation",
-                        "chat::ada::processing::wave_attachment",
-                        "chat::ada::processing::see_new_mission",
-                        "chat::ada::processing::see_new_mission::response"
-                    ]
-                }
-            }
-        },
-        {
-            "name": "chat::ada::processing::wave_explanation",
-            "type": "chat-actor",
-            "data": {
-                "actor": "Ada",
-                "message": "Here's an example of just how far you can go with a little bit of code."
-            }
-        },
-        {
-            "name": "chat::ada::processing::wave_attachment",
-            "type": "chat-actor-attachment",
-            "data": {
-                "actor": "Ada",
-                "attachment": {
-                    "desc": "Waves",
-                    "path": "wave/Wave.pde"
-                }
             }
         },
         {
