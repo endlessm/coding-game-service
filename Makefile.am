@@ -19,10 +19,10 @@ arbitrary_files = \
 	files/line/line.pde \
 	files/martian/martian.pde \
 	files/wave/wave.pde \
-	files/wave/wave_mouse_interaction.pde \
-	files/wave/wave_red.pde \
-	files/wave/wave_red_mouse.pde \
-	files/wave/wave_30.pde \
+	files/wave_mouse_interaction/wave_mouse_interaction.pde \
+	files/wave_red/wave_red.pde \
+	files/wave_red_mouse/wave_red_mouse.pde \
+	files/wave_30/wave_30.pde \
 	files/wave-red.png \
 	files/extension-todo.png \
 	$(NULL)
