@@ -1016,7 +1016,7 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Wave",
-                    "path": "wave/wave.pde"
+                    "path": "wave/Wave.pde"
                 }
             }
         },
@@ -2587,7 +2587,7 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Waves",
-                    "path": "wave/wave.pde"
+                    "path": "wave/Wave.pde"
                 }
             }
         },

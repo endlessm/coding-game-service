@@ -18,9 +18,9 @@ arbitrary_files = \
 	files/showmehow-terminal \
 	files/line/line.pde \
 	files/martian/martian.pde \
-	files/wave/wave.pde \
+	files/wave/Wave.pde \
+	files/wave/WaveMouseInteraction.pde \
 	files/wave/WaveRed.pde \
-	files/wave/wave_mouse_interaction.pde \
 	files/wave/WaveRedMouse.pde \
 	files/wave/Wave30.pde \
 	files/wave-red.png \
