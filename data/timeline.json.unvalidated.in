@@ -1015,7 +1015,7 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Wave",
-                    "path": "wave/Wave.pde"
+                    "path": "wave/wave.pde"
                 }
             }
         },
@@ -1198,7 +1198,7 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Wave 30",
-                    "path": "wave/Wave30.pde"
+                    "path": "wave/wave_30.pde"
                 }
             }
         },
@@ -1330,7 +1330,7 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Wave Red",
-                    "path": "wave/WaveRed.pde"
+                    "path": "wave/wave_red.pde"
                 }
             }
         },
@@ -1481,7 +1481,7 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "If your file doesn’t look like this, click the icon to open the WaveRedMouse file, then compare the code with your version.",
-                    "path": "wave/WaveRedMouse.pde"
+                    "path": "wave/wave_red_mouse.pde"
                 }
             }
         },
@@ -1543,7 +1543,7 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "Click the icon to open the WaveRedWhiteMouse file, then compare the code with your version.",
-                    "path": "wave/WaveRedWhiteMouse.pde"
+                    "path": "wave/wave_red_white_mouse.pde"
                 }
             }
         },
@@ -1777,7 +1777,7 @@
                 "actor": "Ada",
                 "attachment": {
                     "desc": "WaveMouseInteraction",
-                    "path": "wave/WaveMouseInteraction.pde"
+                    "path": "wave/wave_mouse_interaction.pde"
                 }
             }
         },

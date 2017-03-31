@@ -18,11 +18,11 @@ arbitrary_files = \
 	files/showmehow-terminal \
 	files/line/line.pde \
 	files/martian/martian.pde \
-	files/wave/Wave.pde \
-	files/wave/WaveMouseInteraction.pde \
-	files/wave/WaveRed.pde \
-	files/wave/WaveRedMouse.pde \
-	files/wave/Wave30.pde \
+	files/wave/wave.pde \
+	files/wave/wave_mouse_interaction.pde \
+	files/wave/wave_red.pde \
+	files/wave/wave_red_mouse.pde \
+	files/wave/wave_30.pde \
 	files/wave-red.png \
 	files/extension-todo.png \
 	$(NULL)
