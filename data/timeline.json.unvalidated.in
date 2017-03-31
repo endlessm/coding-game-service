@@ -1015,7 +1015,7 @@
             "data": {
                 "actor": "Ada",
                 "attachment": {
-                    "desc": "Waves",
+                    "desc": "Wave",
                     "path": "wave/wave.pde"
                 }
             }
@@ -1049,6 +1049,7 @@
                 },
                 "responses": {
                     "yes": [
+                        "chat::ada::processing::wave_6",
                         "chat::ada::processing::wave_7",
                         "chat::ada::processing::wave_8",
                         "chat::ada::processing::wave_9",
@@ -1276,7 +1277,11 @@
                      ],
                     "no": [
                         "chat::ada::processing::wave_23_sketch",
-                        "chat::ada::processing::wave_23"
+                        "chat::ada::processing::wave_23",
+                        "chat::ada::processing::wave_24",
+                        "chat::ada::processing::wave_25",
+                        "chat::ada::processing::wave_26",
+                        "chat::ada::processing::wave_27"
                     ]
                 }
             }
