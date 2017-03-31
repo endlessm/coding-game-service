@@ -1807,12 +1807,21 @@
                 },
                 "responses": {
                     "yes": [
+                        "chat::ada::processing::code_print_console_intro",
                         "chat::ada::processing::code_print_console",
                         "chat::ada::processing::chat_explain_comments",
                         "chat::ada::processing::chat_check_print",
                         "chat::ada::processing::chat_check_print::response"
                     ]
                 }
+            }
+        },
+        {
+            "name": "chat::ada::processing::code_print_console_intro",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "In the Text editor, type the code below, and then click on the play button to run your code."
             }
         },
         {
