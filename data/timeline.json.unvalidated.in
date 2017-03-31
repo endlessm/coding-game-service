@@ -1040,8 +1040,8 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_6",
-                        "chat::ada::processing::wave_6_pause"
+                        "chat::ada::processing::wave_change_num",
+                        "chat::ada::processing::wave_change_num_pause"
                     ],
                     "no": [
                         "chat::ada::processing::wave_animation",
@@ -1052,7 +1052,7 @@
             }
         },
         {
-          "name": "chat::ada::processing::wave_6",
+          "name": "chat::ada::processing::wave_change_num",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1060,7 +1060,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_6_pause",
+            "name": "chat::ada::processing::wave_change_num_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1077,15 +1077,15 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_7",
-                        "chat::ada::processing::wave_8",
-                        "chat::ada::processing::wave_8_pause"
+                        "chat::ada::processing::wave_change_num_to_30",
+                        "chat::ada::processing::wave_change_step",
+                        "chat::ada::processing::wave_change_step_pause"
                     ]
                 }
             }
         },
         {
-          "name": "chat::ada::processing::wave_7",
+          "name": "chat::ada::processing::wave_change_num_to_30",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1093,7 +1093,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_8",
+          "name": "chat::ada::processing::wave_change_step",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1101,7 +1101,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_8_pause",
+            "name": "chat::ada::processing::wave_change_step_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1118,15 +1118,15 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_9",
-                        "chat::ada::processing::wave_10",
-                        "chat::ada::processing::wave_11"
+                        "chat::ada::processing::wave_reduce_arcs",
+                        "chat::ada::processing::wave_enlarge_window",
+                        "chat::ada::processing::wave_enlarge_window_pause"
                     ]
                 }
             }
         },
         {
-          "name": "chat::ada::processing::wave_9",
+          "name": "chat::ada::processing::wave_reduce_arcs",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1134,7 +1134,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_10",
+          "name": "chat::ada::processing::wave_enlarge_window",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1142,7 +1142,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_11",
+            "name": "chat::ada::processing::wave_enlarge_window_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1162,21 +1162,21 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_13",
-                        "chat::ada::processing::wave_14",
-                        "chat::ada::processing::wave_14_pause"
+                        "chat::ada::processing::wave_arcs_num",
+                        "chat::ada::processing::wave_thickness",
+                        "chat::ada::processing::wave_thickness_pause"
                      ],
                     "no": [
-                        "chat::ada::processing::wave_12",
-                        "chat::ada::processing::wave_13",
-                        "chat::ada::processing::wave_14",
-                        "chat::ada::processing::wave_14_pause"
+                        "chat::ada::processing::wave_stroke_sample_code_example",
+                        "chat::ada::processing::wave_arcs_num",
+                        "chat::ada::processing::wave_thickness",
+                        "chat::ada::processing::wave_thickness_pause"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_12",
+            "name": "chat::ada::processing::wave_stroke_sample_code_example",
             "type": "chat-actor-attachment",
             "data": {
                 "actor": "Ada",
@@ -1187,7 +1187,7 @@
             }
         },
         {
-          "name": "chat::ada::processing::wave_13",
+          "name": "chat::ada::processing::wave_arcs_num",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1195,7 +1195,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_14",
+          "name": "chat::ada::processing::wave_thickness",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1203,7 +1203,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_14_pause",
+            "name": "chat::ada::processing::wave_thickness_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1220,15 +1220,15 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_15",
-                        "chat::ada::processing::wave_16",
-                        "chat::ada::processing::wave_16_pause"
+                        "chat::ada::processing::wave_colors",
+                        "chat::ada::processing::wave_stroke",
+                        "chat::ada::processing::wave_stroke_pause"
                     ]
                 }
             }
         },
         {
-          "name": "chat::ada::processing::wave_15",
+          "name": "chat::ada::processing::wave_colors",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1236,7 +1236,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_16",
+          "name": "chat::ada::processing::wave_stroke",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1244,7 +1244,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_16_pause",
+            "name": "chat::ada::processing::wave_stroke_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1261,18 +1261,18 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_17",
-                        "chat::ada::processing::wave_18",
-                        "chat::ada::processing::wave_19",
-                        "chat::ada::processing::wave_20",
-                        "chat::ada::processing::wave_21",
-                        "chat::ada::processing::wave_21_pause"
+                        "chat::ada::processing::wave_search",
+                        "chat::ada::processing::wave_stroke_change",
+                        "chat::ada::processing::wave_stroke_grey",
+                        "chat::ada::processing::wave_stroke_rgb",
+                        "chat::ada::processing::wave_stroke_rgb_change",
+                        "chat::ada::processing::wave_stroke_rgb_change_pause"
                     ]
                 }
             }
         },
         {
-          "name": "chat::ada::processing::wave_17",
+          "name": "chat::ada::processing::wave_search",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1280,7 +1280,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_18",
+          "name": "chat::ada::processing::wave_stroke_change",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1288,7 +1288,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_19",
+          "name": "chat::ada::processing::wave_stroke_grey",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1296,7 +1296,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_20",
+          "name": "chat::ada::processing::wave_stroke_rgb",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1304,7 +1304,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_21",
+          "name": "chat::ada::processing::wave_stroke_rgb_change",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1312,7 +1312,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_21_pause",
+            "name": "chat::ada::processing::wave_stroke_rgb_change_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1329,14 +1329,14 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_21_png",
-                        "chat::ada::processing::wave_22"
+                        "chat::ada::processing::wave_stroke_rgb_change_png",
+                        "chat::ada::processing::wave_stroke_rgb_change_pause"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_21_png",
+            "name": "chat::ada::processing::wave_stroke_rgb_change_png",
             "type": "chat-actor-attachment",
             "data": {
                 "actor": "Ada",
@@ -1347,7 +1347,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_22",
+            "name": "chat::ada::processing::wave_stroke_rgb_change_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1367,22 +1367,22 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_23",
-                        "chat::ada::processing::wave_24",
-                        "chat::ada::processing::wave_25",
-                        "chat::ada::processing::wave_26",
-                        "chat::ada::processing::wave_27"
+                        "chat::ada::processing::wave_stroke_green",
+                        "chat::ada::processing::wave_stroke_blending",
+                        "chat::ada::processing::wave_stroke_purple",
+                        "chat::ada::processing::wave_rgb_moreinfo",
+                        "chat::ada::processing::wave_rgb_moreinfo_pause"
                      ],
                     "no": [
-                        "chat::ada::processing::wave_23_sketch",
-                        "chat::ada::processing::wave_23",
-                        "chat::ada::processing::wave_23_pause"
+                        "chat::ada::processing::wave_stroke_green_sketch",
+                        "chat::ada::processing::wave_stroke_green",
+                        "chat::ada::processing::wave_stroke_green_pause"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_23_sketch",
+            "name": "chat::ada::processing::wave_stroke_green_sketch",
             "type": "chat-actor-attachment",
             "data": {
                 "actor": "Ada",
@@ -1393,7 +1393,7 @@
             }
         },
         {
-          "name": "chat::ada::processing::wave_23",
+          "name": "chat::ada::processing::wave_stroke_green",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1401,7 +1401,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_23_pause",
+            "name": "chat::ada::processing::wave_stroke_green_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1418,16 +1418,16 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_24",
-                        "chat::ada::processing::wave_25",
-                        "chat::ada::processing::wave_26",
-                        "chat::ada::processing::wave_27"
+                        "chat::ada::processing::wave_stroke_blending",
+                        "chat::ada::processing::wave_stroke_purple",
+                        "chat::ada::processing::wave_rgb_moreinfo",
+                        "chat::ada::processing::wave_rgb_moreinfo_pause"
                     ]
                 }
             }
         },
         {
-          "name": "chat::ada::processing::wave_24",
+          "name": "chat::ada::processing::wave_stroke_blending",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1435,7 +1435,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_25",
+          "name": "chat::ada::processing::wave_stroke_purple",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1443,7 +1443,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_26",
+          "name": "chat::ada::processing::wave_rgb_moreinfo",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1451,7 +1451,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_27",
+            "name": "chat::ada::processing::wave_rgb_moreinfo_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1468,16 +1468,16 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_28",
-                        "chat::ada::processing::wave_29",
-                        "chat::ada::processing::wave_30",
-                        "chat::ada::processing::wave_31"
+                        "chat::ada::processing::wave_if",
+                        "chat::ada::processing::wave_stroke_if",
+                        "chat::ada::processing::wave_stroke_sample_code",
+                        "chat::ada::processing::wave_stroke_sample_code_pause"
                     ]
                 }
             }
         },
        {
-          "name": "chat::ada::processing::wave_28",
+          "name": "chat::ada::processing::wave_if",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1485,7 +1485,7 @@
           }
         },
        {
-          "name": "chat::ada::processing::wave_29",
+          "name": "chat::ada::processing::wave_stroke_if",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1493,7 +1493,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_30",
+          "name": "chat::ada::processing::wave_stroke_sample_code",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1502,7 +1502,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_31",
+            "name": "chat::ada::processing::wave_stroke_sample_code_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1519,13 +1519,13 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_32"
+                        "chat::ada::processing::wave_mouse_interaction"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_32",
+            "name": "chat::ada::processing::wave_mouse_interaction",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1545,21 +1545,21 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_34",
-                        "chat::ada::processing::wave_35",
-                        "chat::ada::processing::wave_36"
+                        "chat::ada::processing::wave_background",
+                        "chat::ada::processing::wave_background_code",
+                        "chat::ada::processing::wave_background_code_pause"
                      ],
                      "no": [
-                        "chat::ada::processing::wave_33",
-                        "chat::ada::processing::wave_34",
-                        "chat::ada::processing::wave_35",
-                        "chat::ada::processing::wave_36"
+                        "chat::ada::processing::wave_red_mouse",
+                        "chat::ada::processing::wave_background",
+                        "chat::ada::processing::wave_background_code",
+                        "chat::ada::processing::wave_background_code_pause"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_33",
+            "name": "chat::ada::processing::wave_red_mouse",
             "type": "chat-actor-attachment",
             "data": {
                 "actor": "Ada",
@@ -1570,7 +1570,7 @@
             }
         },
         {
-          "name": "chat::ada::processing::wave_34",
+          "name": "chat::ada::processing::wave_background",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1578,7 +1578,7 @@
           }
         },
         {
-          "name": "chat::ada::processing::wave_35",
+          "name": "chat::ada::processing::wave_background_code",
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
@@ -1587,7 +1587,7 @@
           }
         },
         {
-            "name": "chat::ada::processing::wave_36",
+            "name": "chat::ada::processing::wave_background_code_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1607,21 +1607,21 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_38",
-                        "chat::ada::processing::wave_39",
-                        "chat::ada::processing::wave_40"
+                        "chat::ada::processing::wave_all_colors",
+                        "chat::ada::processing::wave_map_function",
+                        "chat::ada::processing::wave_map_function_pause"
                      ],
                     "no": [
-                        "chat::ada::processing::wave_37",
-                        "chat::ada::processing::wave_38",
-                        "chat::ada::processing::wave_39",
-                        "chat::ada::processing::wave_40"
+                        "chat::ada::processing::wave_red_white_mouse",
+                        "chat::ada::processing::wave_all_colors",
+                        "chat::ada::processing::wave_map_function",
+                        "chat::ada::processing::wave_map_function_pause"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing:wave_37",
+            "name": "chat::ada::processing:wave_red_white_mouse",
             "type": "chat-actor-attachment",
             "data": {
                 "actor": "Ada",
@@ -1632,7 +1632,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_38",
+            "name": "chat::ada::processing::wave_all_colors",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1640,7 +1640,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_39",
+            "name": "chat::ada::processing::wave_map_function",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1648,7 +1648,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_40",
+            "name": "chat::ada::processing::wave_map_function_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1668,18 +1668,18 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_42",
-                        "chat::ada::processing::wave_43",
-                        "chat::ada::processing::wave_43_pause"
+                        "chat::ada::processing::wave_speed",
+                        "chat::ada::processing::wave_speed_fast",
+                        "chat::ada::processing::wave_speed_fast_pause"
                      ],
                     "no": [
-                        "chat::ada::processing::wave_41"
+                        "chat::ada::processing::wave_ok_then"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_41",
+            "name": "chat::ada::processing::wave_ok_then",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1696,15 +1696,15 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_42",
-                        "chat::ada::processing::wave_43",
-                        "chat::ada::processing::wave_43_pause"
+                        "chat::ada::processing::wave_speed",
+                        "chat::ada::processing::wave_speed_fast",
+                        "chat::ada::processing::wave_speed_fast_pause"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_42",
+            "name": "chat::ada::processing::wave_speed",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1712,7 +1712,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_43",
+            "name": "chat::ada::processing::wave_speed_fast",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1720,7 +1720,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_43_pause",
+            "name": "chat::ada::processing::wave_speed_fast_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1737,14 +1737,14 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_44",
-                        "chat::ada::processing::wave_44_pause"
+                        "chat::ada::processing::wave_speed_slow",
+                        "chat::ada::processing::wave_speed_slow_pause"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_44",
+            "name": "chat::ada::processing::wave_speed_slow",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1752,7 +1752,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_44_pause",
+            "name": "chat::ada::processing::wave_speed_slow_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1769,17 +1769,17 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_45",
-                        "chat::ada::processing::wave_46",
-                        "chat::ada::processing::wave_47",
-                        "chat::ada::processing::wave_48",
-                        "chat::ada::processing::wave_48_pause"
+                        "chat::ada::processing::wave_speed_too_slow",
+                        "chat::ada::processing::wave_map_speed",
+                        "chat::ada::processing::wave_theta",
+                        "chat::ada::processing::wave_theta_code",
+                        "chat::ada::processing::wave_theta_code_pause"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_45",
+            "name": "chat::ada::processing::wave_speed_too_slow",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1787,7 +1787,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_46",
+            "name": "chat::ada::processing::wave_map_speed",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1795,7 +1795,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_47",
+            "name": "chat::ada::processing::wave_theta",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1803,7 +1803,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_48",
+            "name": "chat::ada::processing::wave_theta_code",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1812,7 +1812,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_48_pause",
+            "name": "chat::ada::processing::wave_theta_code_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
@@ -1829,17 +1829,17 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_49",
-                        "chat::ada::processing::wave_50",
-                        "chat::ada::processing::wave_51",
-                        "chat::ada::processing::wave_52",
-                        "chat::ada::processing::wave_52_pause"
+                        "chat::ada::processing::wave_move_rigth",
+                        "chat::ada::processing::wave_free_change",
+                        "chat::ada::processing::wave_mouse_interaction_file",
+                        "chat::ada::processing::wave_new_empty_file",
+                        "chat::ada::processing::wave_new_empty_file_pause"
                     ]
                 }
             }
         },
         {
-            "name": "chat::ada::processing::wave_49",
+            "name": "chat::ada::processing::wave_move_rigth",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1847,7 +1847,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_50",
+            "name": "chat::ada::processing::wave_free_change",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1855,7 +1855,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_51",
+            "name": "chat::ada::processing::wave_mouse_interaction_file",
             "type": "chat-actor-attachment",
             "data": {
                 "actor": "Ada",
@@ -1866,7 +1866,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_52",
+            "name": "chat::ada::processing::wave_new_empty_file",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
@@ -1874,7 +1874,7 @@
             }
         },
         {
-            "name": "chat::ada::processing::wave_52_pause",
+            "name": "chat::ada::processing::wave_new_empty_file_pause",
             "type": "input-user",
             "data": {
                 "actor": "Ada",
