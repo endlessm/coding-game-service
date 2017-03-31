@@ -1164,29 +1164,13 @@
                     "yes": [
                         "chat::ada::processing::wave_13",
                         "chat::ada::processing::wave_14",
-                        "chat::ada::processing::wave_15",
-                        "chat::ada::processing::wave_16",
-                        "chat::ada::processing::wave_17",
-                        "chat::ada::processing::wave_18",
-                        "chat::ada::processing::wave_19",
-                        "chat::ada::processing::wave_20",
-                        "chat::ada::processing::wave_21",
-                        "chat::ada::processing::wave_21_png",
-                        "chat::ada::processing::wave_22"
+                        "chat::ada::processing::wave_14_pause"
                      ],
                     "no": [
                         "chat::ada::processing::wave_12",
                         "chat::ada::processing::wave_13",
                         "chat::ada::processing::wave_14",
-                        "chat::ada::processing::wave_15",
-                        "chat::ada::processing::wave_16",
-                        "chat::ada::processing::wave_17",
-                        "chat::ada::processing::wave_18",
-                        "chat::ada::processing::wave_19",
-                        "chat::ada::processing::wave_20",
-                        "chat::ada::processing::wave_21",
-                        "chat::ada::processing::wave_21_png",
-                        "chat::ada::processing::wave_22"
+                        "chat::ada::processing::wave_14_pause"
                     ]
                 }
             }
@@ -1219,6 +1203,31 @@
           }
         },
         {
+            "name": "chat::ada::processing::wave_14_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_15",
+                        "chat::ada::processing::wave_16",
+                        "chat::ada::processing::wave_16_pause"
+                    ]
+                }
+            }
+        },
+        {
           "name": "chat::ada::processing::wave_15",
           "type": "chat-actor",
           "data": {
@@ -1233,6 +1242,34 @@
             "actor": "Ada",
             "message": "Look for the “stroke” function, which currently has a variable of (255)."
           }
+        },
+        {
+            "name": "chat::ada::processing::wave_16_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_17",
+                        "chat::ada::processing::wave_18",
+                        "chat::ada::processing::wave_19",
+                        "chat::ada::processing::wave_20",
+                        "chat::ada::processing::wave_21",
+                        "chat::ada::processing::wave_21_pause"
+                    ]
+                }
+            }
         },
         {
           "name": "chat::ada::processing::wave_17",
@@ -1275,6 +1312,30 @@
           }
         },
         {
+            "name": "chat::ada::processing::wave_21_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_21_png",
+                        "chat::ada::processing::wave_22"
+                    ]
+                }
+            }
+        },
+        {
             "name": "chat::ada::processing::wave_21_png",
             "type": "chat-actor-attachment",
             "data": {
@@ -1315,10 +1376,7 @@
                     "no": [
                         "chat::ada::processing::wave_23_sketch",
                         "chat::ada::processing::wave_23",
-                        "chat::ada::processing::wave_24",
-                        "chat::ada::processing::wave_25",
-                        "chat::ada::processing::wave_26",
-                        "chat::ada::processing::wave_27"
+                        "chat::ada::processing::wave_23_pause"
                     ]
                 }
             }
@@ -1341,6 +1399,32 @@
             "actor": "Ada",
             "message": "Let’s try out some more colors! Let’s change the stroke variables to (0,255,0) for some lucky green waves."
           }
+        },
+        {
+            "name": "chat::ada::processing::wave_23_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_24",
+                        "chat::ada::processing::wave_25",
+                        "chat::ada::processing::wave_26",
+                        "chat::ada::processing::wave_27"
+                    ]
+                }
+            }
         },
         {
           "name": "chat::ada::processing::wave_24",
