@@ -995,7 +995,6 @@
                     "yes": [
                         "chat::ada::processing::wave_start",
                         "chat::ada::processing::wave_animation",
-                        "chat::ada::processing::wave_animation_play",
                         "chat::ada::processing::wave_animation_play_pause"
                     ]
                 }
@@ -1006,7 +1005,7 @@
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
-            "message": "Let’s make some mods! Click the “Wave” icon below to open some cool wave art in the Processing application. "
+            "message": "Let’s make some mods! Click the “Wave” icon below and press the Play button to see what happens. "
           }
         },
         {
@@ -1019,14 +1018,6 @@
                     "path": "wave/Wave.pde"
                 }
             }
-        },
-        {
-          "name": "chat::ada::processing::wave_animation_play",
-          "type": "chat-actor",
-          "data": {
-            "actor": "Ada",
-            "message": "Press the Play button and see what happens. "
-          }
         },
         {
             "name": "chat::ada::processing::wave_animation_play_pause",
