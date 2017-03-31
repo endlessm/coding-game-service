@@ -1425,12 +1425,14 @@
                 "responses": {
                     "yes": [
                         "chat::ada::processing::wave_34",
-                        "chat::ada::processing::wave_35"
+                        "chat::ada::processing::wave_35",
+                        "chat::ada::processing::wave_36"
                      ],
                      "no": [
                         "chat::ada::processing::wave_33",
                         "chat::ada::processing::wave_34",
-                        "chat::ada::processing::wave_35"
+                        "chat::ada::processing::wave_35",
+                        "chat::ada::processing::wave_36"
                     ]
                 }
             }
@@ -1547,9 +1549,7 @@
                     "yes": [
                         "chat::ada::processing::wave_42",
                         "chat::ada::processing::wave_43",
-                        "chat::ada::processing::wave_44",
-                        "chat::ada::processing::wave_45",
-                        "chat::ada::processing::wave_46"
+                        "chat::ada::processing::wave_43_pause"
                      ],
                     "no": [
                         "chat::ada::processing::wave_41"
@@ -1577,11 +1577,7 @@
                     "yes": [
                         "chat::ada::processing::wave_42",
                         "chat::ada::processing::wave_43",
-                        "chat::ada::processing::wave_44",
-                        "chat::ada::processing::wave_45",
-                        "chat::ada::processing::wave_46",
-                        "chat::ada::processing::wave_47",
-                        "chat::ada::processing::wave_48"
+                        "chat::ada::processing::wave_43_pause"
                     ]
                 }
             }
@@ -1603,11 +1599,63 @@
             }
         },
         {
+            "name": "chat::ada::processing::wave_43_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_44",
+                        "chat::ada::processing::wave_44_pause"
+                    ]
+                }
+            }
+        },
+        {
             "name": "chat::ada::processing::wave_44",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
                 "message": "Whoa! Too fast! Let’s knock it down to .001."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_44_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_45",
+                        "chat::ada::processing::wave_46",
+                        "chat::ada::processing::wave_47",
+                        "chat::ada::processing::wave_48",
+                        "chat::ada::processing::wave_49",
+                        "chat::ada::processing::wave_50"
+                    ]
+                }
             }
         },
         {
@@ -1660,11 +1708,48 @@
             }
         },
         {
+            "name": "chat::ada::processing::wave_51",
+            "type": "chat-actor-attachment",
+            "data": {
+                "actor": "Ada",
+                "attachment": {
+                    "desc": "WaveMouseInteraction",
+                    "path": "wave/WaveMouseInteraction.pde"
+                }
+            }
+        },
+        {
             "name": "chat::ada::processing::wave_52",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
                 "message": "Next, we’re going to close this file and start with a new empty Processing file. Press Ready when you have closed your Wave file and open the new, empty file below."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_52_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::code_print_console",
+                        "chat::ada::processing::chat_explain_comments",
+                        "chat::ada::processing::chat_check_print",
+                        "chat::ada::processing::chat_check_print::response"
+                    ]
+                }
             }
         },
         {
