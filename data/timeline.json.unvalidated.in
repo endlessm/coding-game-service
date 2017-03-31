@@ -1050,11 +1050,7 @@
                 "responses": {
                     "yes": [
                         "chat::ada::processing::wave_6",
-                        "chat::ada::processing::wave_7",
-                        "chat::ada::processing::wave_8",
-                        "chat::ada::processing::wave_9",
-                        "chat::ada::processing::wave_10",
-                        "chat::ada::processing::wave_11"
+                        "chat::ada::processing::wave_6_pause"
                     ],
                     "no": [
                         "chat::ada::processing::wave_animation",
@@ -1073,6 +1069,31 @@
           }
         },
         {
+            "name": "chat::ada::processing::wave_6_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            } 
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_7",
+                        "chat::ada::processing::wave_8",
+                        "chat::ada::processing::wave_8_pause"
+                    ]
+                }
+            }
+        },
+        {
           "name": "chat::ada::processing::wave_7",
           "type": "chat-actor",
           "data": {
@@ -1087,6 +1108,31 @@
             "actor": "Ada",
             "message": "Next, let’s change the space between the arcs. On Line 7, change the step command from 22 to 40, then press Play."
           }
+        },
+        {
+            "name": "chat::ada::processing::wave_8_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_9",
+                        "chat::ada::processing::wave_10",
+                        "chat::ada::processing::wave_11"
+                    ]
+                }
+            }
         },
         {
           "name": "chat::ada::processing::wave_9",
@@ -1652,8 +1698,7 @@
                         "chat::ada::processing::wave_46",
                         "chat::ada::processing::wave_47",
                         "chat::ada::processing::wave_48",
-                        "chat::ada::processing::wave_49",
-                        "chat::ada::processing::wave_50"
+                        "chat::ada::processing::wave_48_pause"
                     ]
                 }
             }
@@ -1689,6 +1734,33 @@
                 "actor": "Ada",
                 "message": "theta += map(mouseX, 0, width, 0.001, 0.1);",
                 "styles": ["code"]
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_48_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_49",
+                        "chat::ada::processing::wave_50",
+                        "chat::ada::processing::wave_51",
+                        "chat::ada::processing::wave_52",
+                        "chat::ada::processing::wave_52_pause"
+                    ]
+                }
             }
         },
         {
