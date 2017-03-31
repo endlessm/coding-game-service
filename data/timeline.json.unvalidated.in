@@ -1089,7 +1089,7 @@
           "type": "chat-actor",
           "data": {
             "actor": "Ada",
-            "message": "Where did all our lines go? Let’s change the int num variable to 30."
+            "message": "Where did all our lines go? Let’s change the num variable to 30."
           }
         },
         {
