@@ -1097,7 +1097,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Next, let's change the space between the arcs. On Line 7, change the step command from 22 to 40, then press Play."
+                "message": "Next, let's change the space between the arcs. On Line 7, change the step command from 22 to 30, then press Play."
             }
         },
         {
@@ -1130,7 +1130,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Whoa! We're going to need a bigger window to contain this wave! Let's reduce our # of arcs from 40 to 30 to fit all that arc-y goodness."
+                "message": "Whoa! We're going to need a bigger window to contain this wave! Let's reduce our # of arcs from 30 to 25 to fit all that arc-y goodness."
             }
         },
         {
@@ -1181,8 +1181,8 @@
             "data": {
                 "actor": "Ada",
                 "attachment": {
-                    "desc": "Wave 30",
-                    "path": "wave_30/wave_30.pde"
+                    "desc": "Wave 25",
+                    "path": "wave_25/wave_25.pde"
                 }
             }
         },

@@ -1,4 +1,4 @@
-int num = 30;
+int num = 25;
 float step, sz, offSet, theta, angle;
 
 void setup() {

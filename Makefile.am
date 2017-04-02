@@ -22,7 +22,7 @@ arbitrary_files = \
 	files/wave_mouse_interaction/wave_mouse_interaction.pde \
 	files/wave_red/wave_red.pde \
 	files/wave_red_mouse/wave_red_mouse.pde \
-	files/wave_30/wave_30.pde \
+	files/wave_25/wave_25.pde \
 	files/wave-red.png \
 	files/extension-todo.png \
 	$(NULL)
