@@ -1162,13 +1162,11 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::wave_arcs_num",
                         "chat::ada::processing::wave_thickness",
                         "chat::ada::processing::wave_thickness_pause"
                      ],
                     "no": [
                         "chat::ada::processing::wave_stroke_sample_code_example",
-                        "chat::ada::processing::wave_arcs_num",
                         "chat::ada::processing::wave_thickness",
                         "chat::ada::processing::wave_thickness_pause"
                     ]
@@ -1184,14 +1182,6 @@
                     "desc": "Wave 25",
                     "path": "wave_25/wave_25.pde"
                 }
-            }
-        },
-        {
-            "name": "chat::ada::processing::wave_arcs_num",
-            "type": "chat-actor",
-            "data": {
-                "actor": "Ada",
-                "message": "That's much more exciting! With the “int” command (short for “integer”), we've changed the number of arcs that form our wave. "
             }
         },
         {
