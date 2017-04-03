@@ -1045,7 +1045,6 @@
                     ],
                     "no": [
                         "chat::ada::processing::wave_animation",
-                        "chat::ada::processing::wave_animation_play",
                         "chat::ada::processing::wave_animation_play_pause"
                     ]
                 }
@@ -1138,7 +1137,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "On line 2, let's also enlarge the window size by changing size(600,400); to size(800,600); then press Play."
+                "message": "On line 2, let's also enlarge the window size by changing size(600, 400); to size(800, 600); then press Play."
             }
         },
         {
@@ -1479,7 +1478,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Create a new line above the stroke command and add and edit the code so that it looks like this, then press Play"
+                "message": "Create a new line above the stroke command and add and edit the code so that it looks like this, then press Play."
             }
         },
         {
@@ -1487,7 +1486,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "if(mousePressed){\n  stroke(255, 0, 0);\n} else {\n  stroke(255);\n}",
+                "message": "if(mousePressed){\n  stroke(255, 0, 0);\n} else {\n  stroke(255, 255, 255);\n}",
                 "styles": ["code"]
             }
         },
@@ -1629,7 +1628,7 @@
             }
         },
         {
-            "name": "chat::ada::processing:wave_red_white_mouse",
+            "name": "chat::ada::processing::wave_red_white_mouse",
             "type": "chat-actor-attachment",
             "data": {
                 "actor": "Ada",

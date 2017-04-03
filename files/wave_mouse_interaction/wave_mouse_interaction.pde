@@ -9,9 +9,9 @@ void setup() {
 
 void draw() {
   if(mousePressed){
-    background(255);
+    background(255, 255, 255);
   } else {
-    background(20);
+    background(0, 0, 0);
   }
   translate(width/2, height*.75);
   angle=0;

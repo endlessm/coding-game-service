@@ -16,7 +16,7 @@ void draw() {
     noFill();
     sz = i*step;
     float offSet = TWO_PI/num*i;
-    float arcEnd = map(sin(theta+offSet),-1,1, PI, TWO_PI);
+    float arcEnd = map(sin(theta+offSet), -1, 1, PI, TWO_PI);
     arc(0, 0, sz, sz, PI, arcEnd);
   }
   colorMode(RGB);
