@@ -1088,7 +1088,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Where did all our lines go? Let's change the num variable to 30."
+                "message": "Where did all our lines go? Let's set the value of the num variable to 30."
             }
         },
         {
@@ -1436,7 +1436,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Play around with the color parameters and press 'Ready' to learn how to change the colors by pressing the mouse. To learn more about working with RGB values, visit this website: <a href=\"http://web.stanford.edu/class/cs101/image-rgb-explorer.html\">Image RGB Explorer</a>"
+                "message": "Play around with the color parameters. To learn more about working with RGB values, visit this website: <a href=\"http://web.stanford.edu/class/cs101/image-rgb-explorer.html\">Image RGB Explorer</a>."
             }
         },
         {
@@ -1447,7 +1447,7 @@
                 "input": {
                     "type": "choice",
                     "settings": {
-                        "prompt": "Ready to continue?",
+                        "prompt": "Want to learn how to change the wave color by user input?",
                         "choices": {
                             "yes": {
                                 "text": "Ready!"
@@ -1470,7 +1470,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Welcome back! Time to get interactive. Let’s work with the “If” command to choose our bright red color only when the mouse is pressed."
+                "message": "Welcome back! Time to get interactive. Let’s work with the “If” statement to choose our bright red color only when the mouse button is pressed."
             }
         },
         {
@@ -1592,7 +1592,7 @@
                 "input": {
                     "type": "choice",
                     "settings": {
-                        "prompt": "Are your wave color and background color changing when you press the mouse?",
+                        "prompt": "Are your wave color and background color changing when you press the mouse button?",
                         "choices": {
                             "yes": {
                                 "text": "Yes"
