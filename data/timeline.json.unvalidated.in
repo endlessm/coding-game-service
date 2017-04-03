@@ -155,10 +155,9 @@
             "start_events": [
                 "chat::ada::processing::time_something_new",
                 "chat::ada::processing::processing_tool_drawings",
-                "chat::ada::processing::chat_beginner_tutorial",
-                "event::ada::processing::insert_processing_icon",
-                "chat::ada::processing::show_icon",
-                "chat::ada::processing::show_icon_pause"
+                "chat::ada::processing::chat_show_interface",
+                "chat::ada::processing::show_processing_interface",
+                "chat::ada::processing::show_processing_interface_pause"
             ],
             "artifacts": [
                 {
@@ -954,59 +953,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Processing is a great tool for creating interactive drawings with code. "
-            }
-        },
-        {
-          "name": "chat::ada::processing::chat_beginner_tutorial",
-          "type": "chat-actor",
-          "data": {
-            "actor": "Ada",
-            "message": "To get started, click the Processing icon on the desktop. It should look like this:"
-          }
-        },
-        {
-            "name": "event::ada::processing::insert_processing_icon",
-            "type": "modify-app-grid",
-            "data": {
-                "action": "add-app",
-                "app": "org.processing.App.desktop"
-            }
-        },
-        {
-            "name": "chat::ada::processing::show_icon",
-            "type": "chat-actor-attachment",
-            "data": {
-                "actor": "Ada",
-                "attachment": {
-                    "desc": "Processing",
-                    "path": "org.processing.App.desktop"
-                }
-            }
-        },
-        {
-            "name": "chat::ada::processing::show_icon_pause",
-            "type": "input-user",
-            "data": {
-                "actor": "Ada",
-                "input": {
-                    "type": "choice",
-                    "settings": {
-                        "prompt": "Ready to continue?",
-                        "choices": {
-                            "yes": {
-                                "text": "Ready!"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "yes": [
-                        "chat::ada::processing::chat_show_interface",
-                        "chat::ada::processing::show_processing_interface",
-                        "chat::ada::processing::show_processing_interface_pause"
-                    ]
-                }
+                "message": "Processing is a great tool for creating interactive drawings with code."
             }
         },
         {
@@ -1014,7 +961,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "The image below explains the main interface areas in the app."
+                "message": "Click the image below to get a quick look at the key elements in the Processing app."
             }
         },
         {
@@ -1046,7 +993,912 @@
                 },
                 "responses": {
                     "yes": [
-                        "chat::ada::processing::chat_first_code",
+                        "chat::ada::processing::wave_start",
+                        "chat::ada::processing::wave_animation",
+                        "chat::ada::processing::wave_animation_play_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_start",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Let's make some mods! Click the “Wave” icon below and press the Play button to see what happens."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_animation",
+            "type": "chat-actor-attachment",
+            "data": {
+                "actor": "Ada",
+                "attachment": {
+                    "desc": "Wave",
+                    "path": "wave/wave.pde"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_animation_play_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Do you see a cool wave animation?",
+                        "choices": {
+                            "yes": {
+                                "text": "Yes"
+                            },
+                            "no": {
+                                "text": "No"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_change_num",
+                        "chat::ada::processing::wave_change_num_pause"
+                    ],
+                    "no": [
+                        "chat::ada::processing::wave_animation",
+                        "chat::ada::processing::wave_animation_play_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_change_num",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Now let's change the code and see what happens. In the Text Editor, let's change the value of the variable “num” on Line 1 from 20 to 10, then press Play."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_change_num_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_change_num_to_30",
+                        "chat::ada::processing::wave_change_step",
+                        "chat::ada::processing::wave_change_step_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_change_num_to_30",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Where did all our lines go? Let's change the num variable to 30."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_change_step",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Next, let's change the space between the arcs. On Line 7, change the “step” command from 22 to 30, then press Play."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_change_step_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_reduce_arcs",
+                        "chat::ada::processing::wave_enlarge_window",
+                        "chat::ada::processing::wave_enlarge_window_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_reduce_arcs",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Whoa! We're going to need a bigger window to contain this wave! Let's reduce our # of arcs from 30 to 25 to fit all that arc-y goodness."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_enlarge_window",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "On line 2, let's also enlarge the window size by changing size(600, 400); to size(800, 600); then press Play."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_enlarge_window_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Does your wave fit in the window? ",
+                        "choices": {
+                            "yes": {
+                                "text": "Yes"
+                            },
+                            "no": {
+                                "text": "No"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_thickness",
+                        "chat::ada::processing::wave_thickness_pause"
+                     ],
+                    "no": [
+                        "chat::ada::processing::wave_stroke_sample_code_example",
+                        "chat::ada::processing::wave_thickness",
+                        "chat::ada::processing::wave_thickness_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_sample_code_example",
+            "type": "chat-actor-attachment",
+            "data": {
+                "actor": "Ada",
+                "attachment": {
+                    "desc": "Wave 25",
+                    "path": "wave_25/wave_25.pde"
+                }
+            }
+        },
+        {
+          "name": "chat::ada::processing::wave_thickness",
+          "type": "chat-actor",
+          "data": {
+            "actor": "Ada",
+            "message": "Now let's have some fun with the thickness of the arcs. On line 6, let's change the strokeWeight from 5 to 25."
+          }
+        },
+        {
+            "name": "chat::ada::processing::wave_thickness_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_colors",
+                        "chat::ada::processing::wave_stroke",
+                        "chat::ada::processing::wave_stroke_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_colors",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Look at those crazy arcs! Let's drop it down to 10 and have some fun with colors."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Look for the “stroke” function, which is currently being being run with 255."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_search",
+                        "chat::ada::processing::wave_stroke_change",
+                        "chat::ada::processing::wave_stroke_grey",
+                        "chat::ada::processing::wave_stroke_rgb",
+                        "chat::ada::processing::wave_stroke_rgb_change",
+                        "chat::ada::processing::wave_stroke_rgb_change_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_search",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Did you find it? If you didn't find it by scanning, you can always press “Control-F” to bring up a Search window and type “stroke”. Or just go to line 15.  ; )"
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_change",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "The stroke function changes the color of the strokes (which could be lines, arcs, ellipses, etc). Let's start by changing the stroke variable to 155."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_grey",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Now your wave should be a grey color. Because we only have one stroke variable, our poor arcs can only be drawn with white, black, or shades of grey. Time for a pop of color!"
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_rgb",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Lets add the red, green, and blue variables (aka “RGB”), and make the arcs red."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_rgb_change",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Change the stroke variables to: (255, 0, 0), then press Play."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_rgb_change_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_stroke_rgb_change_png",
+                        "chat::ada::processing::wave_stroke_rgb_change_png_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_rgb_change_png",
+            "type": "chat-actor-attachment",
+            "data": {
+                "actor": "Ada",
+                "attachment": {
+                    "desc": "Wave",
+                    "path": "wave-red.png"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_rgb_change_png_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Does your sketch file look like this?",
+                        "choices": {
+                            "yes": {
+                                "text": "Yes"
+                            },
+                            "no": {
+                                "text": "No"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_stroke_green",
+                        "chat::ada::processing::wave_stroke_blending",
+                        "chat::ada::processing::wave_stroke_purple",
+                        "chat::ada::processing::wave_rgb_moreinfo",
+                        "chat::ada::processing::wave_rgb_moreinfo_pause"
+                     ],
+                    "no": [
+                        "chat::ada::processing::wave_stroke_green_sketch",
+                        "chat::ada::processing::wave_stroke_green",
+                        "chat::ada::processing::wave_stroke_green_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_green_sketch",
+            "type": "chat-actor-attachment",
+            "data": {
+                "actor": "Ada",
+                "attachment": {
+                    "desc": "Wave Red",
+                    "path": "wave_red/wave_red.pde"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_green",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Let’s try out some more colors! Let’s change the stroke variables to (0, 255, 0) for some lucky green waves."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_green_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_stroke_blending",
+                        "chat::ada::processing::wave_stroke_purple",
+                        "chat::ada::processing::wave_rgb_moreinfo",
+                        "chat::ada::processing::wave_rgb_moreinfo_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_blending",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Now let’s try blending our RGB values: stroke(0, 255, 255)"
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_purple",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Looks like green and blue make a lovely teal color! Why not explore and try reducing the numbers to see what happens. I love this purple color: (150, 0, 255)"
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_rgb_moreinfo",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Play around with the color parameters and press 'Ready' to learn how to change the colors by pressing the mouse. To learn more about working with RGB values, visit this website: <a href=\"http://web.stanford.edu/class/cs101/image-rgb-explorer.html\">Image RGB Explorer</a>"
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_rgb_moreinfo_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_if",
+                        "chat::ada::processing::wave_stroke_if",
+                        "chat::ada::processing::wave_stroke_sample_code",
+                        "chat::ada::processing::wave_stroke_sample_code_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_if",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Welcome back! Time to get interactive. Let’s work with the “If” command to choose our bright red color only when the mouse is pressed."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_if",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Create a new line above the stroke command and add and edit the code so that it looks like this, then press Play."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_sample_code",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "if(mousePressed){\n  stroke(255, 0, 0);\n} else {\n  stroke(255, 255, 255);\n}",
+                "styles": ["code"]
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_stroke_sample_code_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_mouse_interaction"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_mouse_interaction",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Did you get your wave to interact with the mouse?",
+                        "choices": {
+                            "yes": {
+                                "text": "Yes"
+                            },
+                            "no": {
+                                "text": "No"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_background",
+                        "chat::ada::processing::wave_background_code",
+                        "chat::ada::processing::wave_background_code_pause"
+                     ],
+                     "no": [
+                        "chat::ada::processing::wave_red_mouse_intro",
+                        "chat::ada::processing::wave_red_mouse",
+                        "chat::ada::processing::wave_background",
+                        "chat::ada::processing::wave_background_code",
+                        "chat::ada::processing::wave_background_code_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_red_mouse_intro",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "If your file doesn’t look like this, click the icon to open the WaveRedMouse file, then compare the code with your version."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_red_mouse",
+            "type": "chat-actor-attachment",
+            "data": {
+                "actor": "Ada",
+                "attachment": {
+                    "desc": "WaveRedMouse",
+                    "path": "wave_red_mouse/wave_red_mouse.pde"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_background",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Let's amp the grooviness factor even more by changing the background color with the same logic... Please add and edit the code for the background command:"
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_background_code",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "void draw() {\n  if(mousePressed){\n    background(255);\n  } else {\n    background(20);\n  }\n",
+                "styles": ["code"]
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_background_code_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Are your wave color and background color changing when you press the mouse?",
+                        "choices": {
+                            "yes": {
+                                "text": "Yes"
+                            },
+                            "no": {
+                                "text": "No"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_all_colors",
+                        "chat::ada::processing::wave_map_function",
+                        "chat::ada::processing::wave_map_function_pause"
+                     ],
+                    "no": [
+                        "chat::ada::processing::wave_red_white_mouse_intro",
+                        "chat::ada::processing::wave_red_white_mouse",
+                        "chat::ada::processing::wave_all_colors",
+                        "chat::ada::processing::wave_map_function",
+                        "chat::ada::processing::wave_map_function_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_red_white_mouse_intro",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Click the icon to open the WaveRedWhiteMouse file, then compare the code with your version."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_red_white_mouse",
+            "type": "chat-actor-attachment",
+            "data": {
+                "actor": "Ada",
+                "attachment": {
+                    "desc": "WaveRedWhiteMouse",
+                    "path": "wave_red_white_mouse/wave_red_white_mouse.pde"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_all_colors",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "If you’re feeling bold, go ahead and change the colors for the wave and background colors"
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_map_function",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Finally, we’re going to introduce you to a power-user command: the map function. This function remaps a number from one range to another. In this example, we’re going to map the speed of the wave animation to the position of the mouse."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_map_function_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Are you ready for this?",
+                        "choices": {
+                            "yes": {
+                                "text": "Yeah!"
+                            },
+                            "no": {
+                               "text": "Umm. Maybe?!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_speed",
+                        "chat::ada::processing::wave_speed_fast",
+                        "chat::ada::processing::wave_speed_fast_pause"
+                     ],
+                    "no": [
+                        "chat::ada::processing::wave_ok_then"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_ok_then",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Nothing bad will happen! And we’ll give you a fresh example file if you have any issues",
+                        "choices": {
+                            "yes": {
+                                "text": "OK, then!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_speed",
+                        "chat::ada::processing::wave_speed_fast",
+                        "chat::ada::processing::wave_speed_fast_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_speed",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Do you see the last command in our code, the theta command? This controls the velocity, or speed, of our animation."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_speed_fast",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Let’s change our very small number to something less small: .1, then press Play."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_speed_fast_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_speed_slow",
+                        "chat::ada::processing::wave_speed_slow_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_speed_slow",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Whoa! Too fast! Let’s knock it down to .001."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_speed_slow_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_speed_too_slow",
+                        "chat::ada::processing::wave_map_speed",
+                        "chat::ada::processing::wave_theta",
+                        "chat::ada::processing::wave_theta_code",
+                        "chat::ada::processing::wave_theta_code_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_speed_too_slow",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "And that’s too slow!"
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_map_speed",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Now let’s use the map function to map the mouse “X” position (the horizontal axis from 0 to the width of the Sketch window), and scale the wave animation speed (from the sloth-like speed of .001 to the speedy 0.1) based on where the mouse is located."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_theta",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Change the theta variables to:"
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_theta_code",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "theta += map(mouseX, 0, width, 0.001, 0.1);",
+                "styles": ["code"]
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_theta_code_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready to continue?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::wave_move_rigth",
+                        "chat::ada::processing::wave_free_change",
+                        "chat::ada::processing::wave_mouse_interaction_file",
+                        "chat::ada::processing::wave_new_empty_file",
+                        "chat::ada::processing::wave_new_empty_file_pause"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_move_rigth",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Try it out! As you move the mouse from the left side of the Sketch window to the right, your animation should be speeding up. And don’t forget to see how pressing the mouse changes the wave and background."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_free_change",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "There’s so much great stuff to explore! Feel free to change any of the variables you’ve learned, or open the file below to get a fresh Sketch file."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_mouse_interaction_file",
+            "type": "chat-actor-attachment",
+            "data": {
+                "actor": "Ada",
+                "attachment": {
+                    "desc": "WaveMouseInteraction",
+                    "path": "wave_mouse_interaction/wave_mouse_interaction.pde"
+                }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_new_empty_file",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Next, we’re going to close this file and start with a new empty Processing file. Press Ready when you have closed your Wave file and open the new, empty file below."
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_new_empty_file_pause",
+            "type": "input-user",
+            "data": {
+                "actor": "Ada",
+                "input": {
+                    "type": "choice",
+                    "settings": {
+                        "prompt": "Ready?",
+                        "choices": {
+                            "yes": {
+                                "text": "Ready!"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "yes": [
+                        "chat::ada::processing::code_print_console_intro",
                         "chat::ada::processing::code_print_console",
                         "chat::ada::processing::chat_explain_comments",
                         "chat::ada::processing::chat_check_print",
@@ -1056,11 +1908,11 @@
             }
         },
         {
-            "name": "chat::ada::processing::chat_first_code",
+            "name": "chat::ada::processing::code_print_console_intro",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Now, let's write our first code. In the Text editor, type the code below, and then click on the play button to run your code."
+                "message": "In the Text editor, type the code below, and then click on the play button to run your code."
             }
         },
         {
@@ -1895,8 +2747,8 @@
                         "chat::ada::processing::code_stroke",
                         "chat::ada::processing::chat_stroke_color",
                         "chat::ada::processing::chat_tweak_martian",
-                        "chat::ada::processing::chat_move_to_cool_example",
-                        "chat::ada::processing::chat_move_to_cool_example::response"
+                        "chat::ada::processing::see_new_mission",
+                        "chat::ada::processing::see_new_mission::response"
                     ]
                 }
             }
@@ -1932,59 +2784,6 @@
             "data": {
                 "actor": "Ada",
                 "message": "Experiment with the parameters that defined your Martian. You can change the ellipses, stroke weight or color, or anything else, now that you know what these commands do!"
-            }
-        },
-        {
-            "name": "chat::ada::processing::chat_move_to_cool_example",
-            "type": "chat-actor",
-            "data": {
-                "actor": "Ada",
-                "message": "When you're ready to see something really cool, click the button below to continue."
-            }
-        },
-        {
-            "name": "chat::ada::processing::chat_move_to_cool_example::response",
-            "type": "input-user",
-            "data": {
-                "actor": "Ada",
-                "input": {
-                    "type": "choice",
-                    "settings": {
-                        "prompt": "Ready to continue?",
-                        "choices": {
-                            "yes": {
-                                "text": "Ready!"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "yes": [
-                        "chat::ada::processing::wave_explanation",
-                        "chat::ada::processing::wave_attachment",
-                        "chat::ada::processing::see_new_mission",
-                        "chat::ada::processing::see_new_mission::response"
-                    ]
-                }
-            }
-        },
-        {
-            "name": "chat::ada::processing::wave_explanation",
-            "type": "chat-actor",
-            "data": {
-                "actor": "Ada",
-                "message": "Here's an example of just how far you can go with a little bit of code."
-            }
-        },
-        {
-            "name": "chat::ada::processing::wave_attachment",
-            "type": "chat-actor-attachment",
-            "data": {
-                "actor": "Ada",
-                "attachment": {
-                    "desc": "Waves",
-                    "path": "wave/wave.pde"
-                }
             }
         },
         {

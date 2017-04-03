@@ -8,11 +8,21 @@ void setup() {
 }
 
 void draw() {
-  background(20);
+  if(mousePressed){
+    background(255, 255, 255);
+  } else {
+    background(0, 0, 0);
+  }
   translate(width/2, height*.75);
   angle=0;
   for (int i=0; i<num; i++) {
-    stroke(255);
+    
+    if(mousePressed){
+      stroke(255, 0, 0);
+    } else {
+      stroke(255, 255, 255);
+    }
+    
     noFill();
     sz = i*step;
     float offSet = TWO_PI/num*i;
@@ -21,6 +31,7 @@ void draw() {
   }
   colorMode(RGB);
   resetMatrix();
-  theta += .0523;
+  theta += map(mouseX, 0, width, 0.001, 0.1);
   
 }
+
