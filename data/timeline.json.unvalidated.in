@@ -1173,11 +1173,20 @@
                         "chat::ada::processing::wave_thickness_pause"
                      ],
                     "no": [
+                        "chat::ada::processing::wave_enlarge_window_open_example",
                         "chat::ada::processing::wave_stroke_sample_code_example",
-                        "chat::ada::processing::wave_thickness",
-                        "chat::ada::processing::wave_thickness_pause"
+                        "chat::ada::processing::wave_enlarge_window_spot_difference",
+                        "chat::ada::processing::wave_enlarge_window_pause"
                     ]
                 }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_enlarge_window_open_example",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Hmmm. Click the message below to open a file that contains example code."
             }
         },
         {
@@ -1189,6 +1198,14 @@
                     "desc": "Wave 25",
                     "path": "wave_25/wave_25.pde"
                 }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_enlarge_window_spot_difference",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Compare the completed code with your code and see if you can spot the difference. You can continue with the example file or correct your file and close the example file."
             }
         },
         {
