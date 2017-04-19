@@ -1005,7 +1005,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Let's make some mods! Click the “Wave” icon below and press the Play button to see what happens."
+                "message": "Let's make some mods! Click on the message below and open the “wave” example in the Processing application. Then press the Play button to run the example."
             }
         },
         {
@@ -1014,7 +1014,7 @@
             "data": {
                 "actor": "Ada",
                 "attachment": {
-                    "desc": "Wave",
+                    "desc": "Wave animation",
                     "path": "wave/wave.pde"
                 }
             }
@@ -1044,10 +1044,18 @@
                         "chat::ada::processing::wave_change_num_pause"
                     ],
                     "no": [
-                        "chat::ada::processing::wave_animation",
+                        "chat::ada::processing::wave_animation_no",
                         "chat::ada::processing::wave_animation_play_pause"
                     ]
                 }
+            }
+        },
+        {
+            "name": "chat::ada::processing::wave_animation_no",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Click on the message withe the “wave.pde” file above to open the example in the Processing application. Then press the Play button to run the example."
             }
         },
         {
