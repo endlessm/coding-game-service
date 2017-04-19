@@ -1221,7 +1221,7 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Look at those crazy arcs! Let's drop it down to 10 and have some fun with colors."
+                "message": "Look at those crazy arcs! Let’s drop the strokeWeight down to 10 and have some fun with colors."
             }
         },
         {
