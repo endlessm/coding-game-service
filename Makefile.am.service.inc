@@ -50,7 +50,6 @@ resource_nondist_js_files = \
 lib/config.js: $(srcdir)/lib/config.js.in
 	$(AM_V_GEN) mkdir -p lib/ && \
 	sed -e 's,%CODING_FILES_DIR%,$(pkgdatadir)/files,g' \
-	    -e 's,%CODING_COPY_FILES_SCRIPT%,$(pkgdatadir)/coding-copy-files,g' \
 	$< > $@.tmp && \
 	mv -f $@.tmp $@
 
