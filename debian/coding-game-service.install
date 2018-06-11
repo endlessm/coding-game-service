@@ -1,7 +1,0 @@
-debian/tmp/usr/bin/coding-dev-reset
-debian/tmp/usr/bin/coding-game-service
-debian/tmp/usr/bin/coding-terminal
-debian/tmp/usr/lib/*/com.endlessm.CodingGameService/coding-copy-files
-debian/tmp/usr/share/dbus-1/services/*
-debian/tmp/usr/share/polkit-1/actions/*
-debian/tmp/usr/share/com.endlessm.CodingGameService/*

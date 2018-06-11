@@ -1,0 +1,5 @@
+debian/tmp/usr/bin/coding-dev-reset
+debian/tmp/usr/bin/coding-terminal
+debian/tmp/usr/share/com.endlessm.CodingGameService/coding-copy-files
+debian/tmp/usr/share/com.endlessm.CodingGameService/files/showmehow-terminal
+debian/tmp/usr/share/polkit-1/actions/*
