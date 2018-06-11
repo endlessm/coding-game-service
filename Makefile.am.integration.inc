@@ -14,7 +14,7 @@ coding-terminal: $(srcdir)/bin/coding-terminal
 	chmod +x $@
 
 # Script for placing files in the shared dir
-pkglibexec_SCRIPTS = files/coding-copy-files
+pkgdata_SCRIPTS = files/coding-copy-files
 
 files/coding-copy-files: files/coding-copy-files.js.in
 	$(AM_V_GEN) mkdir -p files && \
@@ -27,7 +27,7 @@ polkit_policy_DATA += com.endlessm.Coding.policy
 
 com.endlessm.Coding.policy: com.endlessm.Coding.policy.in
 	$(AM_V_GEN) mkdir -p data && \
-	$(SED) -e 's,%pkglibexecdir%,$(pkglibexecdir),' < $< >$@.tmp && \
+	$(SED) -e 's,%pkgdatadir%,$(pkgdatadir),' < $< >$@.tmp && \
 	mv -f $@.tmp $@
 
 # Things to get rid of later
