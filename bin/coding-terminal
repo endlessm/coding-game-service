@@ -1,3 +1,0 @@
-#!/bin/bash
-
-gnome-terminal -- bash /usr/share/com.endlessm.CodingGameService/files/showmehow-terminal

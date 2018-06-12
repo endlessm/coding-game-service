@@ -9,8 +9,9 @@ coding-dev-reset: $(srcdir)/bin/coding-dev-reset
 	cp $< $@
 	chmod +x $@
 
-coding-terminal: $(srcdir)/bin/coding-terminal
-	cp $< $@
+coding-terminal: $(srcdir)/bin/coding-terminal.in
+	$(AM_V_GEN) $(SED) -e 's,%pkgdatadir%,$(pkgdatadir),g' < $< >$@.tmp && \
+	mv -f $@.tmp $@ && \
 	chmod +x $@
 
 # Script for placing files in the shared dir
@@ -38,7 +39,7 @@ CLEANFILES += \
 	$(NULL)
 EXTRA_DIST += \
 	bin/coding-dev-reset \
-	bin/coding-terminal \
+	bin/coding-terminal.in \
 	com.endlessm.Coding.policy.in \
 	files/coding-copy-files.js.in \
 	$(NULL)
