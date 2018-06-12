@@ -1,5 +1,12 @@
 if CODING_GAME_INTEGRATION_ENABLED
 
+# Arbitrary files
+arbitrary_files = \
+	files/showmehow-terminal \
+	$(NULL)
+
+nobase_files_DATA = $(arbitrary_files)
+
 bin_SCRIPTS += \
 	coding-dev-reset \
 	coding-terminal \
@@ -38,6 +45,7 @@ CLEANFILES += \
 	files/coding-copy-files \
 	$(NULL)
 EXTRA_DIST += \
+	$(arbitrary_files) \
 	bin/coding-dev-reset \
 	bin/coding-terminal.in \
 	com.endlessm.Coding.policy.in \

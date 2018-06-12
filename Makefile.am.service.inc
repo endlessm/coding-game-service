@@ -17,7 +17,6 @@ arbitrary_files = \
 	files/martian.png \
 	files/martian_colors.png \
 	files/coding-terminal.desktop \
-	files/showmehow-terminal \
 	files/line/line.pde \
 	files/martian/martian.pde \
 	files/wave/wave.pde \
