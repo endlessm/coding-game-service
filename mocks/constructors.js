@@ -11,7 +11,7 @@ const Gio = imports.gi.Gio;
 const Lang = imports.lang;
 
 // eslint-disable-next-line no-unused-vars
-const Descriptors = {
+var Descriptors = {
     warnings: [],
     events: [
         {
@@ -47,12 +47,12 @@ const Descriptors = {
     ]
 };
 // eslint-disable-next-line no-unused-vars
-const createChatController = jasmine.createSpyObj.bind(this, 'ChatControllerMock', [
+var createChatController = jasmine.createSpyObj.bind(this, 'ChatControllerMock', [
     'sendChatMessage',
     'reset'
 ]);
 // eslint-disable-next-line no-unused-vars
-const createExternalService = jasmine.createSpyObj.bind(this, 'ExternalServiceMock', [
+var createExternalService = jasmine.createSpyObj.bind(this, 'ExternalServiceMock', [
     'connectHandlers',
     'setGameManagerState',
     'currentMission',
@@ -103,7 +103,7 @@ const ExternalEffectsStub = new Lang.Class({
     }
 });
 // eslint-disable-next-line no-unused-vars
-const createExternalEffects = function() {
+var createExternalEffects = function() {
     let effects = new ExternalEffectsStub();
     spyOn(effects, 'performEventIn').and.callThrough();
     spyOn(effects, 'changeGSettingsValue');
@@ -114,7 +114,7 @@ const createExternalEffects = function() {
     return effects;
 };
 // eslint-disable-next-line no-unused-vars
-const createLogFileWithStructure = function(structure) {
+var createLogFileWithStructure = function(structure) {
     let [logFile, logFileStream] = Gio.File.new_tmp("game-service-log-XXXXXX");
     logFileStream.output_stream.write(JSON.stringify(structure), null);
     return logFile;
