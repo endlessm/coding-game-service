@@ -156,7 +156,7 @@ const CodingGameServiceApplication = new Lang.Class({
 
 let args = [System.programInvocationName].concat(ARGV);
 let application = new CodingGameServiceApplication({
-    application_id: 'com.endlessm.CodingGameService.Service',
+    application_id: 'com.endlessm.CodingGameService',
     flags: Gio.ApplicationFlags.IS_SERVICE
 });
 application.run(args);

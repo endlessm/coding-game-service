@@ -200,8 +200,8 @@ coding_game_service_app_integration_controller_init(CodingGameServiceAppIntegrat
 {
   controller->service = coding_game_service_coding_game_service_proxy_new_for_bus_sync(G_BUS_TYPE_SESSION,
                                                                                        G_DBUS_PROXY_FLAGS_NONE,
-                                                                                       "com.endlessm.CodingGameService.Service",
-                                                                                       "/com/endlessm/CodingGameService/Service",
+                                                                                       "com.endlessm.CodingGameService",
+                                                                                       "/com/endlessm/CodingGameService",
                                                                                        NULL,
                                                                                        NULL);
   controller->event_handlers = g_hash_table_new_full(g_str_hash,
