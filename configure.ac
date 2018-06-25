@@ -27,6 +27,36 @@ AC_REQUIRE_AUX_FILE([tap-driver.sh])
 # Checks for libraries.
 PKG_CHECK_MODULES(CODING_GAME_SERVICE, [glib-2.0 gio-2.0 gobject-2.0 gio-unix-2.0])
 
+ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS=""
+
+AC_ARG_ENABLE([service], [coding desktop service], [
+  CODING_GAME_SERVICE_ENABLED=$enableval
+], [
+  CODING_GAME_SERVICE_ENABLED=yes
+])
+AM_CONDITIONAL([CODING_GAME_SERVICE_ENABLED], [test "x$CODING_GAME_SERVICE_ENABLED" = "xyes"])
+
+AC_ARG_ENABLE([integration], [coding OS integration], [
+  CODING_GAME_INTEGRATION_ENABLED=$enableval
+], [
+  CODING_GAME_INTEGRATION_ENABLED=no
+])
+AM_CONDITIONAL([CODING_GAME_INTEGRATION_ENABLED], [test "x$CODING_GAME_INTEGRATION_ENABLED" = "xyes"])
+
+AS_IF([test "x$CODING_GAME_SERVICE_ENABLED" = "xyes"], [
+  ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS="$ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS --enable-service"
+], [
+  ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS="$ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS --disable-service"
+])
+
+AS_IF([test "x$CODING_GAME_INTEGRATION_ENABLED" = "xyes"], [
+  ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS="$ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS --enable-integration"
+], [
+  ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS="$ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS --disable-integration"
+])
+
+AC_SUBST([ADDITIONAL_DISTCHECK_CONFIGURE_FLAGS])
+
 # Checks for header files.
 
 # Checks for typedefs, structures, and compiler characteristics.
@@ -54,3 +84,9 @@ EOS_ESLINT
 # Substitute variables
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
+
+echo "
+        Build OS integration:    ${CODING_GAME_INTEGRATION_ENABLED}
+        Build service:           ${CODING_GAME_SERVICE_ENABLED}
+
+"
