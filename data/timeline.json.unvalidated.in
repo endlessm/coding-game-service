@@ -178,7 +178,7 @@
                 "chat::ada::codeview::weather::guessed",
                 "chat::ada::codeview::weather::changed",
                 "chat::ada::codeview::weather::start_app",
-                "chat::ada::codeview::weather::start_app::response"
+                "listen::codeview::weather::start_app"
             ],
             "artifacts": [
                 {
@@ -2878,34 +2878,22 @@
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "On the desktop, you should see an icon for the “Weather” app. Click the icon, and let me know once the app opens."
+                "message": "On the desktop, you should see an icon for the “Weather” app. Click that icon and come back here."
             }
         },
         {
-            "name": "chat::ada::codeview::weather::start_app::response",
-            "type": "input-user",
+            "name": "listen::codeview::weather::start_app",
+            "type": "listen-event",
             "data": {
-                "actor": "Ada",
-                "input": {
-                    "type": "choice",
-                    "settings": {
-                        "prompt": "Opened the app?",
-                        "choices": {
-                            "yes": {
-                                "text": "Done!"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "yes": [
-                        "chat::ada::codeview::weather::start_app::old",
-                        "chat::ada::codeview::weather::start_app::what",
-                        "chat::ada::codeview::weather::flip_screen::hint_chat",
-                        "chat::ada::codeview::weather::flip_screen::hint_screenshot",
-                        "chat::ada::codeview::weather::flip_screen::hint_screenshot_pause"
-                    ]
-                }
+                "name": "codeview-app-opened",
+                "received": [
+                    "chat::ada::codeview::weather::start_app::old",
+                    "chat::ada::codeview::weather::start_app::what",
+                    "chat::ada::codeview::weather::flip_screen::hint_chat",
+                    "chat::ada::codeview::weather::flip_screen::hint_screenshot",
+                    "chat::ada::codeview::weather::flip_screen::hint_chat_second",
+                    "listen::codeview::weather::flip_screen::flipped"
+                ]
             }
         },
         {
@@ -2944,61 +2932,23 @@
             }
         },
         {
-            "name": "chat::ada::codeview::weather::flip_screen::hint_screenshot_pause",
-            "type": "input-user",
-            "data": {
-                "actor": "Ada",
-                "input": {
-                    "type": "choice",
-                    "settings": {
-                        "prompt": "Ready to continue?",
-                        "choices": {
-                            "yes": {
-                                "text": "Ready!"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "yes": [
-                        "chat::ada::codeview::weather::flip_screen::hint_chat_second",
-                        "chat::ada::codeview::weather::flip_screen::response"
-                    ]
-                }
-            }
-        },
-        {
             "name": "chat::ada::codeview::weather::flip_screen::hint_chat_second",
             "type": "chat-actor",
             "data": {
                 "actor": "Ada",
-                "message": "Click it to flip the window and view the code behind the Weather app! Let me know once you’ve done it."
+                "message": "Click it to flip the window and view the code behind the Weather app!"
             }
         },
         {
-            "name": "chat::ada::codeview::weather::flip_screen::response",
-            "type": "input-user",
+            "name": "listen::codeview::weather::flip_screen::flipped",
+            "type": "listen-event",
             "data": {
-                "actor": "Ada",
-                "input": {
-                    "type": "choice",
-                    "settings": {
-                        "prompt": "Flipped the app?",
-                        "choices": {
-                            "yes": {
-                                "text": "Done!"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "yes": [
-                        "chat::ada::codeview::weather::editor::welcome",
-                        "chat::ada::codeview::weather::editor::overview",
-                        "chat::ada::codeview::weather::editor::overview::screenshot",
-                        "chat::ada::codeview::weather::editor::overview::screenshot_pause"
-                    ]
-                }
+                "name": "codeview-flipped",
+                "received": [
+                    "chat::ada::codeview::weather::editor::welcome",
+                    "chat::ada::codeview::weather::editor::wait_download",
+                    "listen::codeview::weather::editor::wait_download"
+                ]
             }
         },
         {
@@ -3007,6 +2957,26 @@
             "data": {
                 "actor": "Ada",
                 "message": "Welcome to CodeView."
+            }
+        },
+        {
+            "name": "chat::ada::codeview::weather::editor::wait_download",
+            "type": "chat-actor",
+            "data": {
+                "actor": "Ada",
+                "message": "Just waiting on the source code to download."
+            }
+        },
+        {
+            "name": "listen::codeview::weather::editor::wait_download",
+            "type": "listen-event",
+            "data": {
+                "name": "codeview-started",
+                "received": [
+                    "chat::ada::codeview::weather::editor::overview",
+                    "chat::ada::codeview::weather::editor::overview::screenshot",
+                    "chat::ada::codeview::weather::editor::overview::screenshot_pause"
+                ]
             }
         },
         {
@@ -3238,7 +3208,7 @@
                 "input": {
                     "type": "choice",
                     "settings": {
-                        "prompt": "Found the line containing the year?",
+                        "prompt": "Found the code retrieving the weather conditions?",
                         "choices": {
                             "yes": {
                                 "text": "Found it!"
@@ -3253,7 +3223,7 @@
                         "chat::ada::codeview::weather::first_task::challenge::save",
                         "chat::ada::codeview::weather::first_task::challenge::run",
                         "chat::ada::codeview::weather::first_task::challenge::patience",
-                        "chat::ada::codeview::weather::first_task::challenge::pause"
+                        "listen::codeview::weather::first_task::challenge::wait_install"
                     ]
                 }
             }
@@ -3300,28 +3270,14 @@
             }
         },
         {
-            "name": "chat::ada::codeview::weather::first_task::challenge::pause",
-            "type": "input-user",
+            "name": "listen::codeview::weather::first_task::challenge::wait_install",
+            "type": "listen-event",
             "data": {
-                "actor": "Ada",
-                "input": {
-                    "prompt": "Ready to continue?",
-                    "type": "choice",
-                    "settings": {
-                        "prompt": "Ready to continue?",
-                        "choices": {
-                            "yes": {
-                                "text": "Ready!"
-                            }
-                        }
-                    }
-                },
-                "responses": {
-                    "yes": [
-                        "chat::ada::codeview::weather::first_task::challenge::outro",
-                        "chat::ada::codeview::weather::first_task::challenge::ready"
-                    ]
-                }
+                "name": "codeview-installed",
+                "received": [
+                    "chat::ada::codeview::weather::first_task::challenge::outro",
+                    "chat::ada::codeview::weather::first_task::challenge::ready"
+                ]
             }
         },
         {
